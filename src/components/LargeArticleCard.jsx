@@ -5,21 +5,23 @@ const LargeArticleCard = ({ mainArticle }) => {
   return (
     <li className="main-article-card">
       <div className="container">
-      <h2>{title}</h2>
-      <img
-        src={article_img_url}
-        alt="undefined article image, alt will be updated soon"
-      />
-      <h3 className="left">{author}</h3>
-      <h3 className="right">{topic}</h3>
-      <button>
-        <span class="material-symbols-outlined">thumb_up</span>
-        {votes}
-      </button>
-      <button>
-        <span class="material-symbols-outlined">comment</span>
-        {comment_count}
-      </button>
+        <h2>{title}</h2>
+        <img
+          src={article_img_url}
+          alt="undefined article image, alt will be updated soon"
+        />
+        <div className="article-information">
+          <h3>
+            by <span className="accent"> {author}</span>
+          </h3>
+          <h3>
+            in <span className="accent"> {topic}</span>
+          </h3>
+        </div>
+        <div className="article-information">
+          <span className="interactions btns">{votes} votes</span>
+          <span className="interactions btns">{comment_count} comments</span>
+        </div>
       </div>
     </li>
   );

@@ -1,17 +1,22 @@
-import planet from "../assets/planet.png";
+import { useContext } from "react";
+import { UserContext } from "../contexts/UserContext";
 
-const Header = ({ heading }) => {
+const Header = () => {
+  const {user} = useContext(UserContext)
+
   return (
-      <h1>
-        <span id="right-heading" className="material-symbols-outlined">
-          {heading}
-        </span>
-        <img className="icon" src={planet} alt="image of earth" />
-        <span className="heading-title">bytenews</span>
-        <span id="left-heading" className="material-symbols-outlined">
-          menu
-        </span>
-      </h1>
+    <nav>
+      <ul className="header-menu">
+        <li className="header-container">
+          <h1>
+            INTER<span className="header-accent">BYTE</span>
+          </h1>
+        </li>
+        <li>
+        <img src={user.avater_url} alt={`${user.username} icon`} className="icon" />
+        </li>
+      </ul>
+    </nav>
   );
 };
 export default Header;

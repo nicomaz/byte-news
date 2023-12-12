@@ -2,7 +2,6 @@ import { useContext } from "react";
 import { ArticlesContext } from "../contexts/Articles";
 import Articles from "../components/AllArticles";
 import Header from "../components/Header";
-import Date from "../components/Date";
 import TopNavBar from "../components/TopNavBar";
 
 const Home = () => {
@@ -14,21 +13,18 @@ const Home = () => {
 
   return (
     <>
-      <header className="grid">
-        <Header heading="home" />
-        <Date />
+      <header className="header">
+        <Header />
       </header>
-      <nav>
+      <nav className="container">
         <TopNavBar />
       </nav>
-      <main>
-        <articles>
-          <Articles
-            mainArticle={mainArticle}
-            secondaryArticles={secondaryArticles}
-            tertiaryArticles={tertiaryArticles}
-          />
-        </articles>
+      <main className="container">
+        <Articles
+          mainArticle={mainArticle}
+          secondaryArticles={secondaryArticles}
+          tertiaryArticles={tertiaryArticles}
+        />
       </main>
     </>
   );

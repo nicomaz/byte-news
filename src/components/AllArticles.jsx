@@ -17,7 +17,7 @@ const Articles = (sortedArticles) => {
   }, []);
 
   return (
-    <ul className="grid">
+    <ul>
         <LargeArticleCard mainArticle={mainArticle} />
       {secondaryArticles.map((article) => {
         return (
