@@ -25,7 +25,6 @@ const SingleArticleCard = ({ article }) => {
       <div className="singleCard-top">
         <div className="article-information">
           <span id="date">{date}</span>
-          <VotesButton votes={votes} />
         </div>
         <h2> {title}</h2>
         <img
@@ -46,8 +45,10 @@ const SingleArticleCard = ({ article }) => {
       </div>
       <div className="singleCard-bottom">
         <p>{body}</p>
-        <div className="article-information"></div>
-        <VoteOnButton />
+        <div className="article-information">
+          <VotesButton votes={votes} />
+          <VoteOnButton />
+        </div>
       </div>
     </div>
   );

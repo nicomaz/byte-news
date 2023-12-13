@@ -267,6 +267,10 @@ button {
   cursor: pointer;
 }
 
+.btns .material-symbols-outlined {
+  color: #3e425fbd;
+}
+
 .toggle {
   margin: 0 auto;
 }
@@ -274,7 +278,6 @@ button {
 .article-information-2 > button {
   border-radius: 5px;
   padding: 0.2rem 0.5rem;
-  background-color: #d5d5d5;
   border: solid #98b9eb80;
   box-shadow: 0 3px 3px 0 #abcbfb80, 0 2px 2px 0 #707b9d;
   color: #11559e;
@@ -285,8 +288,6 @@ button.one {
   margin-right: 0.5rem;
 }
 
-button.two {
-}
 /* `main article card */
 
 .main-article-card .container {
