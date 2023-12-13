@@ -8,12 +8,18 @@ import SmallArticleCard from "./SmallArticleCard";
 const Articles = (sortedArticles) => {
   const { articles, setArticles } = useContext(ArticlesContext);
   const { mainArticle, secondaryArticles, tertiaryArticles } = sortedArticles;
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     getAllArticles().then((articlesData) => {
       setArticles(articlesData);
+      setIsLoading(false);
     });
   }, []);
+
+  if (isLoading) {
+    return <div className="loading">LOADING...</div>;
+  }
 
   return (
     <ul>
