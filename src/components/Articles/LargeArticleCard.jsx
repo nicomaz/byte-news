@@ -25,7 +25,9 @@ const LargeArticleCard = ({ mainArticle }) => {
             <span className="accent-3"> {topic}</span>
           </h3>
         </div>
-        <VoteAndCommentButtons props={[votes, comment_count]} />
+        <VoteAndCommentButtons
+          props={[votes, comment_count, mainArticle.article_id]}
+        />
       </div>
     </li>
   );
