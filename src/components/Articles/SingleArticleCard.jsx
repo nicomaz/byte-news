@@ -23,7 +23,10 @@ const SingleArticleCard = ({ article }) => {
   return (
     <div className="singleCard">
       <div className="singleCard-top">
-      <span id="date" className="right">{date}</span>
+        <div className="article-information">
+          <span id="date">{date}</span>
+          <VotesButton votes={votes} />
+        </div>
         <h2> {title}</h2>
         <img src={article_img_url} alt="article image, to be updated" />
         <div className="article-information">
@@ -39,10 +42,7 @@ const SingleArticleCard = ({ article }) => {
       </div>
       <div className="singleCard-bottom">
         <p>{body}</p>
-        <div className="article-information">
-          <VotesButton votes={votes} />
-          <CommentsButton comments={comment_count} />
-        </div>
+        <div className="article-information"></div>
       </div>
     </div>
   );

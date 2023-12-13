@@ -91,7 +91,7 @@ h3 {
 .accent-3 {
   cursor: pointer;
   text-transform: uppercase;
-  color: #546cb2;
+  color: #0d2f94dc;
   font-size: 1rem;
   font-family: "Work Sans", sans-serif;
   font-weight: 500;
@@ -369,6 +369,21 @@ button:hover {
   color: #595959;
 }
 
+.singleCard-top .interactions {
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+  cursor: default;
+}
+
+.singleCard-top h2 {
+  text-align: center;
+}
+
+.singleCard-top .article-information {
+  justify-content: baseline;
+}
+
 /* `comments article container */
 
 .comments-container {
@@ -429,6 +444,14 @@ ul.container {
     max-width: 768px;
   }
 
+  .comments {
+    font-size: 1rem;
+  }
+
+  ul.container {
+    padding: 1rem 3rem;
+  }
+
   .small-container {
     display: grid;
   }
@@ -462,11 +485,20 @@ ul.container {
     text-align: center;
     padding: 0.5rem 0;
   }
+
+  .singleCard {
+    margin: 1rem 3rem 2rem 3rem;
+  }
 }
 
 @media (min-width: 768px) {
   .container {
+    max-width: 1024px;
     width: 100%;
+  }
+
+  .singleCard {
+    font-size: 1.1rem;
   }
 }
 
