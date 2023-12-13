@@ -230,7 +230,7 @@ button.page-name:hover {
 
 .secondary-article-card h2 {
   text-align: right;
-  font-size: 1.4rem;
+  font-size: 1.1rem;
 }
 
 .accent-2 {
@@ -252,11 +252,13 @@ button.page-name:hover {
   margin-top: 1rem;
   background-color: #ffffff69;
   list-style: none;
+  padding-right: 1em;
+  height: 100%;
 }
 
 .tertiary-article-card {
-  width: 48vw;
-  height: 40vh;
+  width: 48.1vw;
+  height: 96%;
   margin-top: 1rem;
   text-align: left;
   background-color: #ffffff69;
@@ -264,35 +266,101 @@ button.page-name:hover {
 }
 
 .tertiary-article-card img {
-  width: 10rem;
+  width: 100%;
   height: 8rem;
   object-fit: contain;
 }
 
+.tertiary-article-card h3 {
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+}
+
 .tertiary-article-card h2 {
-  margin-bottom: 2px;
+  font-size: 1rem;
+  text-align: center;
 }
 
 .small-text {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
+}
+
+.btns {
+  justify-content: flex-end;
 }
 
 @media (min-width: 475px) {
   .container {
-    max-width: 475px;
+    max-width: 640px;
+  }
+
+  .tertiary-article-card img {
+    width: 100%;
+    height: 50%;
+    object-fit: contain;
+  }
+
+  .secondary-article-card h2 {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+
+  .small-text {
+    font-size: 1rem;
+  }
+
+  .tertiary-article-card h3 {
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
   }
 }
 
-/* 
 @media (min-width: 640px) {
   .container {
-    max-width: 640px;
+    max-width: 768px;
+  }
+
+  .small-container {
+    display: grid;
+  }
+
+  .tertiary-container {
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1rem;
+  }
+
+  .tertiary-article-card h3 {
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+  }
+
+  .tertiary-article-card {
+    display: grid;
+    width: 88%;
+    height: 55vh;
+    text-align: center;
+  }
+
+  .tertiary-article-card img {
+    width: 15rem;
+    height: 10rem;
+    object-fit: contain;
+  }
+
+  .tertiary-article-card h2 {
+    text-align: center;
+    padding: 0.5rem 0;
   }
 }
 
 @media (min-width: 768px) {
   .container {
-    max-width: 768px;
+    width: 100%;
   }
 }
 
@@ -312,4 +380,4 @@ button.page-name:hover {
   .container {
     max-width: 1536px;
   }
-} */
+}
