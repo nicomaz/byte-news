@@ -1,6 +1,5 @@
 import { useContext, useEffect, useState } from "react";
 import { getAllArticles } from "../utils/api";
-import Article from "./LargeArticleCard";
 import { ArticlesContext } from "../contexts/Articles";
 import LargeArticleCard from "./LargeArticleCard";
 import MediumArticleCard from "./MediumArticleCard";
@@ -18,7 +17,7 @@ const Articles = (sortedArticles) => {
 
   return (
     <ul>
-        <LargeArticleCard mainArticle={mainArticle} />
+      <LargeArticleCard mainArticle={mainArticle} />
       {secondaryArticles.map((article) => {
         return (
           <li key={article.article_id}>
@@ -26,11 +25,15 @@ const Articles = (sortedArticles) => {
           </li>
         );
       })}
-      {tertiaryArticles.map((article) => {
-        <li key={article.article_id}>
-          <SmallArticleCard article={article} />
-        </li>;
-      })}
+      <div className="tertiary-container">
+        {tertiaryArticles.map((article) => {
+          return (
+            <li key={article.article_id}>
+              <SmallArticleCard article={article} />
+            </li>
+          );
+        })}
+      </div>
     </ul>
   );
 };
