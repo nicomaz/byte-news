@@ -28,7 +28,11 @@ const SingleArticleCard = ({ article }) => {
           <VotesButton votes={votes} />
         </div>
         <h2> {title}</h2>
-        <img src={article_img_url} alt="article image, to be updated" />
+        <img
+                  className="center"
+          src={article_img_url}
+          alt="article image, to be updated"
+        />
         <div className="article-information">
           <h3>
             <span className="accent-2">by</span>

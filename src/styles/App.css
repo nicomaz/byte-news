@@ -37,11 +37,19 @@ a {
 img {
   max-width: 100%;
   border-radius: 5px;
+  margin: 0 auto;
 }
 
 .right {
   display: grid;
   justify-content: end;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
 }
 
 /* `text */
@@ -355,6 +363,10 @@ button {
   margin: 1rem 3rem 0rem 3rem;
 }
 
+.singleCard-top img {
+  margin: 0 auto;
+}
+
 .singleCard-bottom {
   padding-top: 1rem;
   margin: 0 3rem;
@@ -496,6 +508,19 @@ ul.container {
     width: 100%;
   }
 
+  ul.container {
+    padding: 1rem 5rem;
+  }
+
+  .singleCard {
+    margin: 1rem rem;
+  }
+
+  .singleCard img {
+    margin: 0 auto;
+    align-content: center;
+  }
+
   .singleCard {
     font-size: 1.1rem;
   }
@@ -503,18 +528,23 @@ ul.container {
 
 @media (min-width: 1024px) {
   .container {
-    max-width: 1024px;
+    max-width: 1280px;
+    width: 100%;
+  }
+
+  ul.container {
+    padding: 1rem 5rem;
   }
 }
 
 @media (min-width: 1280px) {
   .container {
-    max-width: 1280px;
+    max-width: 1536px;
   }
 }
 
 @media (min-width: 1536px) {
   .container {
-    max-width: 1536px;
+    max-width: 2000px;
   }
 }
