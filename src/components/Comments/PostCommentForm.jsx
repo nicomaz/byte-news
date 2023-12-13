@@ -6,7 +6,7 @@ const PostCommentForm = () => {
   const [formData, setFormData] = useState({ username: "", body: "" });
 
   if (user.username === "guest") {
-    return <div className="container"> Please log in to comment</div>;
+    return <div className="container msg"> Please log in to comment</div>;
   }
 
   function handleChange(event) {

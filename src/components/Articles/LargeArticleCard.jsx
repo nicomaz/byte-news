@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import VoteAndCommentButtons from "../Buttons-VoteAndComment";
+import VoteAndCommentButtons from "../Buttons/Buttons-VoteAndComment";
 
 const LargeArticleCard = ({ mainArticle }) => {
   const { author, title, topic, votes, comment_count, article_img_url } =

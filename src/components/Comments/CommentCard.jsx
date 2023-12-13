@@ -4,10 +4,10 @@ const CommentCard = ({ comment }) => {
   const { body, author, votes } = comment;
 
   return (
-    <div className="container">
-      <div className="article-information">
+    <div className="container comments">
+      <div>
         <span className="accent">{author}</span>
-        <span>{body}</span>
+        <span id="body">{body}</span>
         <span></span>
         <VotesButton votes={votes} />
       </div>

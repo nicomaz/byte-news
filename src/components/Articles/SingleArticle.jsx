@@ -4,7 +4,7 @@ import SingleArticleCard from "./SingleArticleCard";
 import { LoadingContext } from "../../contexts/Loading";
 import PostCommentForm from "../Comments/PostCommentForm";
 import Comments from "../Comments/Comments";
-import ExtraButton from "../ExtraButton";
+import ExtraButton from "../Buttons/ExtraButton";
 
 const SingleArticle = ({ articleId }) => {
   const [article, setArticle] = useState({});
@@ -23,13 +23,15 @@ const SingleArticle = ({ articleId }) => {
   }
 
   return (
-    <>
+    <div className="article">
       <SingleArticleCard article={article} />
-      <h3>Comments</h3>
-      <PostCommentForm />
-      <Comments articleId={[articleId, 3]} />
-      <ExtraButton extra="More comments" />
-    </>
+      <div className="comments-container">
+      <h3 className="container-name">Comments</h3>
+        <PostCommentForm />
+        <Comments articleId={[articleId, 3]} />
+        <ExtraButton extra="More comments" />
+      </div>
+    </div>
   );
 };
 

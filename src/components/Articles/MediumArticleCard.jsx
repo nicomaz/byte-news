@@ -1,4 +1,4 @@
-import VoteAndCommentButtons from "../Buttons-VoteAndComment";
+import VoteAndCommentButtons from "../Buttons/Buttons-VoteAndComment";
 
 const MediumArticleCard = ({ article }) => {
   const { author, title, topic, votes, comment_count, article_img_url } =
