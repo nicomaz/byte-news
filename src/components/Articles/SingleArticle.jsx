@@ -58,12 +58,12 @@ const SingleArticle = ({ articleId }) => {
       <div className="comments-container">
         <h3 className="container-name">Comments</h3>
         <PostCommentForm />
-        <Comments articleId={[articleId, setComments]} />
-        <ul className="container">{mapComments(showComments)}</ul>
         <button className="btns toggle" onClick={() => showResults()}>
           {showMoreMessage}
           <span className="material-symbols-outlined">{showLessMessage}</span>
         </button>
+        <Comments articleId={[articleId, setComments]} />
+        <ul className="container">{mapComments(showComments)}</ul>
         <ul className="container">
           {showMore ? mapComments(moreComments) : null}
         </ul>
