@@ -39,6 +39,10 @@ const SingleArticle = ({ articleId }) => {
     return <div className="loading">LOADING...</div>;
   }
 
+  if (article.comment_count === 0) {
+    return <div className="loading">No comments to show</div>;
+  }
+
   const showComments = [...comments].slice(0, 3);
   const moreComments = [...comments].slice(3);
 
