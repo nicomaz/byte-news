@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import VoteAndCommentButtons from "../Buttons-VoteAndComment";
 
 const LargeArticleCard = ({ mainArticle }) => {
   const { author, title, topic, votes, comment_count, article_img_url } =
@@ -24,14 +25,7 @@ const LargeArticleCard = ({ mainArticle }) => {
             <span className="accent-3"> {topic}</span>
           </h3>
         </div>
-        <div className="article-information">
-          <span className="interactions btns">{votes} votes</span>
-          <span className="interactions btns">{comment_count} comments</span>
-          <span className="btns">
-            Read more
-            <span className="material-symbols-outlined">chevron_right</span>
-          </span>
-        </div>
+        <VoteAndCommentButtons props={[votes, comment_count]} />
       </div>
     </li>
   );

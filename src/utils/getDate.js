@@ -10,12 +10,11 @@ export function getDate() {
 }
 
 export function setDate(date) {
-  console.log(date)
-  const dateMade = date.toDateString("en-GB", {
+  let newDate = new Date(date);
+  const dateMade = newDate.toDateString("en-GB", {
     year: "numeric",
     month: "long",
     day: "numeric",
   });
-
   return dateMade;
 }
