@@ -6,8 +6,12 @@ const byteNews = axios.create({
 
 export const getAllArticles = () => {
   return byteNews.get("/articles").then((res) => {
-    return res.data.articles
+    return res.data.articles;
   });
 };
 
-
+export const getIndividualArticle = (articleId) => {
+  return byteNews.get(`/articles/${articleId}`).then((res) => {
+    return res.data.articles;
+  });
+};
