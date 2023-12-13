@@ -49,7 +49,6 @@ img {
   display: block;
   margin-left: auto;
   margin-right: auto;
-
 }
 
 /* `text */
@@ -415,7 +414,7 @@ button {
 }
 
 ul.container {
-  padding: 1rem;
+  padding: 0rem 1rem;
 }
 
 #body {
