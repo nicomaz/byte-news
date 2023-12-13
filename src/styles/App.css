@@ -257,10 +257,6 @@ button {
   box-shadow: 0 4px 8px -8px #abcbfb80, 0 6px 20px -20px #707b9d;
 }
 
-button:hover {
-  color: #d5d5d5;
-}
-
 .btns {
   justify-content: flex-end;
 }
@@ -270,6 +266,9 @@ button:hover {
   cursor: pointer;
 }
 
+.toggle {
+  margin: 0 auto;
+}
 /* `main article card */
 
 .main-article-card .container {

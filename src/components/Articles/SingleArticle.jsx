@@ -6,10 +6,26 @@ import PostCommentForm from "../Comments/PostCommentForm";
 import Comments from "../Comments/Comments";
 import ExtraButton from "../Buttons/ExtraButton";
 import { Link } from "react-router-dom";
+import CommentCard from "../Comments/CommentCard";
 
 const SingleArticle = ({ articleId }) => {
+  const [comments, setComments] = useState([]);
   const [article, setArticle] = useState({});
   const { isLoading, setIsLoading } = useContext(LoadingContext);
+  const [showMore, setShowMore] = useState(false);
+  const [showMoreMessage, setShowMoreMessage] = useState("Read more");
+  const [showLessMessage, setShowLessMessage] = useState("expand_more");
+
+  const showResults = () => {
+    setShowMore(!showMore);
+    if (showMore) {
+      setShowMoreMessage("Read more");
+      setShowLessMessage("expand_more");
+    } else {
+      setShowMoreMessage("Read less");
+      setShowLessMessage("expand_less");
+    }
+  };
 
   useEffect(() => {
     setIsLoading(true);
@@ -23,16 +39,34 @@ const SingleArticle = ({ articleId }) => {
     return <div className="loading">LOADING...</div>;
   }
 
+  const showComments = [...comments].slice(0, 3);
+  const moreComments = [...comments].slice(3);
+
+  const mapComments = (comments) => {
+    return comments.map((comment) => {
+      return (
+        <li key={comment.comment_id}>
+          <CommentCard comment={comment} />
+        </li>
+      );
+    });
+  };
+
   return (
     <div className="article">
       <SingleArticleCard article={article} />
       <div className="comments-container">
         <h3 className="container-name">Comments</h3>
         <PostCommentForm />
-        <Comments articleId={[articleId, 3]} />
-        <Link to={`/${articleId}/comments`}>
-          <ExtraButton extra="More comments"/>
-        </Link>
+        <Comments articleId={[articleId, setComments]} />
+        <ul className="container">{mapComments(showComments)}</ul>
+        <button className="btns toggle" onClick={() => showResults()}>
+          {showMoreMessage}
+          <span className="material-symbols-outlined">{showLessMessage}</span>
+        </button>
+        <ul className="container">
+          {showMore ? mapComments(moreComments) : null}
+        </ul>
       </div>
     </div>
   );
