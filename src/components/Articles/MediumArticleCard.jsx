@@ -1,3 +1,5 @@
+import VoteAndCommentButtons from "../Buttons/Buttons-VoteAndComment";
+
 const MediumArticleCard = ({ article }) => {
   const { author, title, topic, votes, comment_count, article_img_url } =
     article;
@@ -13,14 +15,7 @@ const MediumArticleCard = ({ article }) => {
         <img src={article_img_url} alt="" />
         <h2 className="article-title">{title}</h2>
       </div>
-      <div className="article-information">
-        <span className="interactions btns">{votes} votes</span>
-        <span className="interactions btns">{comment_count} comments</span>
-        <span className="btns">
-          Read
-          <span class="material-symbols-outlined">chevron_right</span>
-        </span>
-      </div>
+      <VoteAndCommentButtons props={[votes, comment_count]} />
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { ArticlesContext } from "../contexts/Articles";
-import Articles from "../components/AllArticles";
+import Articles from "../components/Articles/AllArticles";
 import Header from "../components/Header";
 import TopNavBar from "../components/TopNavBar";
 
@@ -13,9 +13,6 @@ const Home = () => {
 
   return (
     <>
-      <header className="header">
-        <Header />
-      </header>
       <nav className="container">
         <TopNavBar />
       </nav>

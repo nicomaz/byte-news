@@ -8,3 +8,13 @@ export function getDate() {
 
   return currentDate;
 }
+
+export function setDate(date) {
+  let newDate = new Date(date);
+  const dateMade = newDate.toDateString("en-GB", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+  return dateMade;
+}

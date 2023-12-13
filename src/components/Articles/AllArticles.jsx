@@ -1,14 +1,15 @@
 import { useContext, useEffect, useState } from "react";
-import { getAllArticles } from "../utils/api";
-import { ArticlesContext } from "../contexts/Articles";
+import { getAllArticles } from "../../utils/api";
+import { ArticlesContext } from "../../contexts/Articles";
 import LargeArticleCard from "./LargeArticleCard";
 import MediumArticleCard from "./MediumArticleCard";
 import SmallArticleCard from "./SmallArticleCard";
+import { LoadingContext } from "../../contexts/Loading";
 
 const Articles = (sortedArticles) => {
-  const { articles, setArticles } = useContext(ArticlesContext);
+  const { setArticles } = useContext(ArticlesContext);
   const { mainArticle, secondaryArticles, tertiaryArticles } = sortedArticles;
-  const [isLoading, setIsLoading] = useState(true);
+  const { isLoading, setIsLoading } = useContext(LoadingContext);
 
   useEffect(() => {
     getAllArticles().then((articlesData) => {
