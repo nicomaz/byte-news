@@ -12,6 +12,6 @@ export const getAllArticles = () => {
 
 export const getIndividualArticle = (articleId) => {
   return byteNews.get(`/articles/${articleId}`).then((res) => {
-    return res.data.articles;
+    return res.data.article;
   });
 };

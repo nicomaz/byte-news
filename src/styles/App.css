@@ -54,6 +54,28 @@ h1:hover {
   letter-spacing: 0px;
 }
 
+.loading {
+  font-family: "Montserrat", sans-serif;
+  padding: 9rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -1px;
+  animation: color-change 3.5s infinite;
+  font-variation-settings: "wght" 771;
+}
+
+@keyframes color-change {
+  0% {
+    color: rgb(17, 26, 74);
+  }
+  50% {
+    color: rgba(21, 21, 121, 0);
+  }
+  100% {
+    color: rgb(18, 12, 59);
+  }
+}
+
 .header {
   width: 100%;
   padding-top: 2rem;

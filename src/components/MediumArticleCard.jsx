@@ -18,7 +18,7 @@ const MediumArticleCard = ({ article }) => {
         <span className="interactions btns">{comment_count} comments</span>
         <span className="btns">
           Read
-          <span class="material-symbols-outlined">chevron_right</span>
+          <span className="material-symbols-outlined">chevron_right</span>
         </span>
       </div>
     </div>

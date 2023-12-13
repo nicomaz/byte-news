@@ -9,7 +9,7 @@ const TopNavBar = () => {
           <span className="material-symbols-outlined">expand_more</span>
         </li>
         <li className="page-name">
-          <span class="material-symbols-outlined">sort</span>
+          <span className="material-symbols-outlined">sort</span>
         </li>
       </ul>
     </>

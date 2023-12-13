@@ -15,7 +15,7 @@ const SmallArticleCard = ({ article }) => {
       <h2 className="article-title">{title}</h2>
       <span className="btns small-text">
         Read
-        <span class="material-symbols-outlined">chevron_right</span>
+        <span className="material-symbols-outlined">chevron_right</span>
       </span>
     </div>
   );
