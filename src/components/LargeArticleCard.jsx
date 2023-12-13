@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const LargeArticleCard = ({ mainArticle }) => {
   const { author, title, topic, votes, comment_count, article_img_url } =
     mainArticle;
@@ -5,11 +7,13 @@ const LargeArticleCard = ({ mainArticle }) => {
   return (
     <li className="main-article-card">
       <div className="container">
-        <h2 className="article-title">{title}</h2>
-        <img
-          src={article_img_url}
-          alt="undefined article image, alt will be updated soon"
-        />
+        <Link to={`/article/${mainArticle.article_id}`}>
+          <h2 className="article-title">{title}</h2>
+          <img
+            src={article_img_url}
+            alt="undefined article image, alt will be updated soon"
+          />
+        </Link>
         <div className="article-information">
           <h3>
             <span className="accent-2"> by </span>

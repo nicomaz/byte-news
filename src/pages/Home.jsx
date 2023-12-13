@@ -13,9 +13,6 @@ const Home = () => {
 
   return (
     <>
-      <header className="header">
-        <Header />
-      </header>
       <nav className="container">
         <TopNavBar />
       </nav>

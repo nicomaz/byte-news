@@ -7,12 +7,22 @@
   padding: 0;
   cursor: default;
   list-style: none;
+  color: #1c1c1c;
 }
 
 body {
   color: #1c1c1c;
   background-color: #d5d5d5;
   font-family: "Clash Grotesk", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  text-align: justify;
+  line-height: 1.4rem;
+  color: #1c1c1c;
+  text-align: center;
+  cursor: pointer;
 }
 
 .container {
@@ -206,8 +216,8 @@ button.page-name:hover {
 }
 
 .article-title {
-  text-align: justify;
-  line-height: 1.4rem;
+  text-align: center;
+  cursor: pointer;
 }
 
 .article-information {
@@ -228,7 +238,7 @@ button.page-name:hover {
   margin-right: 2rem;
 }
 
-.secondary-article-card h2 {
+.secondary-article-card .article-title {
   text-align: right;
   font-size: 1.1rem;
 }
