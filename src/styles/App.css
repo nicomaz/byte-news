@@ -34,6 +34,13 @@ a {
   text-align: center;
 }
 
+img {
+  max-width: 100%;
+  border-radius: 5px;
+}
+
+/* `text */
+
 .interactions {
   cursor: pointer;
   padding: 0.5rem;
@@ -54,6 +61,39 @@ h1:hover {
   letter-spacing: 0px;
 }
 
+h3 {
+  font-size: 1rem;
+  font-family: "Work Sans", sans-serif;
+}
+
+.header-accent {
+  color: #1339aedc;
+}
+
+.accent {
+  cursor: pointer;
+  text-transform: uppercase;
+  color: #0d2f94dc;
+  font-size: 1rem;
+  font-family: "Work Sans", sans-serif;
+}
+.accent-2 {
+  font-weight: 600;
+  color: #1c1c1c8a;
+}
+
+.accent-3 {
+  cursor: pointer;
+  text-transform: lowercase;
+  color: #3b3b3b;
+  font-size: 1rem;
+  font-family: "Work Sans", sans-serif;
+}
+.small-text {
+  font-size: 0.7rem;
+}
+
+/* `loading */
 .loading {
   font-family: "Montserrat", sans-serif;
   padding: 9rem;
@@ -76,6 +116,7 @@ h1:hover {
   }
 }
 
+/* `header + top `nav bar */
 .header {
   width: 100%;
   padding-top: 2rem;
@@ -119,11 +160,6 @@ nav.container {
   font-weight: 500;
 }
 
-img {
-  max-width: 100%;
-  border-radius: 5px;
-}
-
 .icon {
   width: 2rem;
   background-color: #f2f2f289;
@@ -147,62 +183,13 @@ img {
 
 .header-container {
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   background-image: linear-gradient(
     35deg,
     var(--color-primary),
     var(--color-secondary)
   );
-}
-/* #date {
-  display: flex;
-  justify-content: space-evenly;
-  background-color: #00000054;
-  backdrop-filter: blur(2px);
-  width: 100%;
-  padding: 0.4rem;
-  height: 35px;
-} */
-
-h3 {
-  font-size: 1rem;
-  font-family: "Work Sans", sans-serif;
-}
-
-.btns {
-  display: flex;
-  background: none;
-  color: #3b3b3b;
-  font-weight: 600;
-  padding: 0.2em 0rem 0.2rem 0rem;
-  margin: 0.4em 0em;
-  border-width: 0;
-  cursor: pointer;
-}
-
-button {
-  box-shadow: 0 4px 8px -8px #abcbfb80, 0 6px 20px -20px #707b9d;
-}
-
-button:hover {
-  color: #d5d5d5;
-}
-
-.material-symbols-outlined {
-  color: #1c1c1c;
-  cursor: pointer;
-}
-
-.accent {
-  cursor: pointer;
-  text-transform: uppercase;
-  color: #0d2f94dc;
-  font-size: 1rem;
-  font-family: "Work Sans", sans-serif;
-}
-
-.header-accent {
-  color: #1339aedc;
 }
 
 .page-name {
@@ -231,6 +218,38 @@ button.page-name:hover {
   color: #d5d5d5;
 }
 
+/* `buttons */
+
+.btns {
+  display: flex;
+  background: none;
+  color: #3b3b3b;
+  font-weight: 600;
+  padding: 0.2em 0rem 0.2rem 0rem;
+  margin: 0.4em 0em;
+  border-width: 0;
+  cursor: pointer;
+}
+
+button {
+  box-shadow: 0 4px 8px -8px #abcbfb80, 0 6px 20px -20px #707b9d;
+}
+
+button:hover {
+  color: #d5d5d5;
+}
+
+.btns {
+  justify-content: flex-end;
+}
+
+.material-symbols-outlined {
+  color: #1c1c1c;
+  cursor: pointer;
+}
+
+/* `main article card */
+
 .main-article-card .container {
   background-color: #ffffff69;
   padding: 2rem;
@@ -247,6 +266,7 @@ button.page-name:hover {
   justify-content: space-between;
 }
 
+/* `secondary article card */
 .secondary-article-card {
   text-align: left;
   background-color: #ffffff69;
@@ -265,19 +285,7 @@ button.page-name:hover {
   font-size: 1.1rem;
 }
 
-.accent-2 {
-  font-weight: 600;
-  color: #1c1c1c8a;
-}
-
-.accent-3 {
-  cursor: pointer;
-  text-transform: lowercase;
-  color: #3b3b3b;
-  font-size: 1rem;
-  font-family: "Work Sans", sans-serif;
-}
-
+/* `tertiary article card */
 .tertiary-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -314,23 +322,13 @@ button.page-name:hover {
   text-align: center;
 }
 
-.small-text {
-  font-size: 0.7rem;
-}
-
-.btns {
-  justify-content: flex-end;
-}
-
 @media (min-width: 475px) {
   .container {
     max-width: 640px;
   }
 
-  .tertiary-article-card img {
-    width: 100%;
-    height: 50%;
-    object-fit: contain;
+  .small-text {
+    font-size: 1rem;
   }
 
   .secondary-article-card h2 {
@@ -338,8 +336,10 @@ button.page-name:hover {
     text-align: center;
   }
 
-  .small-text {
-    font-size: 1rem;
+  .tertiary-article-card img {
+    width: 100%;
+    height: 50%;
+    object-fit: contain;
   }
 
   .tertiary-article-card h3 {

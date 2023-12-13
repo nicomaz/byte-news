@@ -18,7 +18,6 @@ const PostCommentForm = () => {
 
   function handleSubmit(event) {
     event.preventDefault();
-    console.log(formData);
   }
 
   return (
