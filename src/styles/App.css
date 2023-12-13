@@ -6,6 +6,7 @@
   margin: 0;
   padding: 0;
   cursor: default;
+  list-style: none;
 }
 
 body {
@@ -87,7 +88,7 @@ nav.container {
 }
 
 img {
-  max-width: 21rem;
+  max-width: 100%;
   border-radius: 5px;
 }
 
@@ -275,12 +276,14 @@ button.page-name:hover {
 .small-text {
   font-size: 0.8rem;
 }
-/* @media (min-width: 475px) {
+
+@media (min-width: 475px) {
   .container {
     max-width: 475px;
   }
 }
 
+/* 
 @media (min-width: 640px) {
   .container {
     max-width: 640px;
