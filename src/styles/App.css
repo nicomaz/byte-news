@@ -18,10 +18,8 @@ body {
 
 a {
   text-decoration: none;
-  text-align: justify;
   line-height: 1.4rem;
   color: #1c1c1c;
-  text-align: center;
   cursor: pointer;
 }
 
@@ -37,7 +35,6 @@ a {
 img {
   max-width: 100%;
   border-radius: 5px;
-  margin: 0 auto;
 }
 
 .right {
@@ -49,7 +46,6 @@ img {
   display: block;
   margin-left: auto;
   margin-right: auto;
-
 }
 
 /* `text */
@@ -259,14 +255,11 @@ button.page-name:hover {
   margin: 0.4em 0em;
   border-width: 0;
   cursor: pointer;
+  justify-content: flex-end;
 }
 
 button {
   box-shadow: 0 4px 8px -8px #abcbfb80, 0 6px 20px -20px #707b9d;
-}
-
-.btns {
-  justify-content: flex-end;
 }
 
 .material-symbols-outlined {
@@ -276,6 +269,23 @@ button {
 
 .toggle {
   margin: 0 auto;
+}
+
+.article-information-2 > button {
+  border-radius: 5px;
+  padding: 0.2rem 0.5rem;
+  background-color: #d5d5d5;
+  border: solid #98b9eb80;
+  box-shadow: 0 3px 3px 0 #abcbfb80, 0 2px 2px 0 #707b9d;
+  color: #11559e;
+  font-size: 0.9rem;
+}
+
+button.one {
+  margin-right: 0.5rem;
+}
+
+button.two {
 }
 /* `main article card */
 
@@ -293,6 +303,11 @@ button {
 .article-information {
   display: flex;
   justify-content: space-between;
+}
+
+.article-information-2 {
+  display: flex;
+  justify-content: flex-end;
 }
 
 /* `secondary article card */

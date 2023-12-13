@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import VoteAndCommentButtons from "../Buttons/Buttons-VoteAndComment";
 
 const MediumArticleCard = ({ article }) => {
@@ -11,10 +12,12 @@ const MediumArticleCard = ({ article }) => {
         <span className="accent-2">in</span>
         <span className="accent-3"> {topic}</span>
       </h3>
-      <div className="article-information">
-        <img src={article_img_url} alt="" />
-        <h2 className="article-title">{title}</h2>
-      </div>
+      <Link to={`/article/${article.article_id}`}>
+        <div className="article-information">
+          <img src={article_img_url} alt="" />
+          <h2 className="article-title">{title}</h2>
+        </div>
+      </Link>
       <VoteAndCommentButtons props={[votes, comment_count]} />
     </div>
   );

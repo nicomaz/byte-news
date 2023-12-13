@@ -1,6 +1,6 @@
 import { setDate } from "../../utils/getDate";
+import VoteOnButton from "../Buttons/VoteOnButton";
 import VotesButton from "../Buttons/VotesButton";
-import CommentsButton from "../Buttons/CommentsButton";
 
 const SingleArticleCard = ({ article }) => {
   const {
@@ -29,7 +29,7 @@ const SingleArticleCard = ({ article }) => {
         </div>
         <h2> {title}</h2>
         <img
-                  className="center"
+          className="center"
           src={article_img_url}
           alt="article image, to be updated"
         />
@@ -47,6 +47,7 @@ const SingleArticleCard = ({ article }) => {
       <div className="singleCard-bottom">
         <p>{body}</p>
         <div className="article-information"></div>
+        <VoteOnButton />
       </div>
     </div>
   );

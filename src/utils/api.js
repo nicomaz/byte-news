@@ -21,3 +21,9 @@ export const getCommentsByArticleId = (articleId) => {
     return res.data.comments;
   });
 };
+
+export const voteOnArticle = (articleId, vote) => {
+  return byteNews.send(`/articles/${articleId}`, vote).then((res) => {
+    return res.data.article;
+  });
+};
