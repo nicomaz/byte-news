@@ -347,6 +347,7 @@ button.one {
   text-align: left;
   background-color: #ffffff69;
   padding: 1rem 1rem;
+  margin: 1rem 0rem;
   border-radius: 5px;
 }
 
@@ -374,6 +375,7 @@ button.one {
   height: 100%;
   gap: 3px 3px;
   justify-content: stretch;
+  margin: 1rem 0rem;
 }
 
 li.tertiary-article-card {
