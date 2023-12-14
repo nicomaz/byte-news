@@ -5,7 +5,7 @@ const SmallArticleCard = ({ article }) => {
     article;
 
   return (
-    <div className="tertiary-article-card">
+    <>
       <Link to={`/article/${article.article_id}`}>
         <img src={article_img_url} alt="" />
       </Link>
@@ -23,7 +23,7 @@ const SmallArticleCard = ({ article }) => {
           <span className="material-symbols-outlined">chevron_right</span>
         </span>
       </Link>
-    </div>
+    </>
   );
 };
 
