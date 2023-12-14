@@ -6,28 +6,28 @@ const LargeArticleCard = ({ mainArticle }) => {
     mainArticle;
 
   return (
-    <li className="main-article-card">
-      <div className="container">
-        <Link to={`/article/${mainArticle.article_id}`}>
-          <h2 className="article-title">{title}</h2>
-          <img
-            src={article_img_url}
-            alt="undefined article image, alt will be updated soon"
-          />
-        </Link>
-        <div className="article-information">
-          <h3>
-            <span className="accent-2"> by </span>
-            <span className="accent"> {author}</span>
-          </h3>
-          <h3>
-            <span className="accent-2"> in</span>{" "}
-            <span className="accent-3"> {topic}</span>
-          </h3>
-        </div>
-        <VoteAndCommentButtons props={[votes, comment_count]} />
+    <div className="main-article-card">
+      <Link to={`/article/${mainArticle.article_id}`}>
+        <h2 className="article-title">{title}</h2>
+        <img
+          src={article_img_url}
+          alt="undefined article image, alt will be updated soon"
+        />
+      </Link>
+      <div className="article-information">
+        <h3>
+          <span className="accent-2"> by </span>
+          <span className="accent"> {author}</span>
+        </h3>
+        <h3>
+          <span className="accent-2"> in</span>{" "}
+          <span className="accent-3"> {topic}</span>
+        </h3>
       </div>
-    </li>
+      <VoteAndCommentButtons
+        props={[votes, comment_count, mainArticle.article_id]}
+      />
+    </div>
   );
 };
 

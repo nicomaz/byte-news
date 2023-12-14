@@ -35,9 +35,11 @@ const SingleArticle = ({ articleId }) => {
     });
   }, []);
 
+
   if (isLoading) {
     return <div className="loading">LOADING...</div>;
   }
+
 
   const showComments = [...comments].slice(0, 3);
   const moreComments = [...comments].slice(3);
@@ -58,12 +60,12 @@ const SingleArticle = ({ articleId }) => {
       <div className="comments-container">
         <h3 className="container-name">Comments</h3>
         <PostCommentForm />
-        <Comments articleId={[articleId, setComments]} />
-        <ul className="container">{mapComments(showComments)}</ul>
         <button className="btns toggle" onClick={() => showResults()}>
-          {showMoreMessage}
-          <span className="material-symbols-outlined">{showLessMessage}</span>
+          {comments.length ? showMoreMessage: null}
+          <span className="material-symbols-outlined">{comments.length ? showLessMessage: null}</span>
         </button>
+        <Comments articleId={[articleId, setComments, comments]} />
+        <ul className="container">{mapComments(showComments)}</ul>
         <ul className="container">
           {showMore ? mapComments(moreComments) : null}
         </ul>
