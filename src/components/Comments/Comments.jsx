@@ -9,6 +9,10 @@ const Comments = ({ articleId }) => {
       setComments(commentData);
     });
   }, []);
+
+  if (!articleId[2].length) {
+    return <div className=" msg center">No comments to show</div>;
+  }
 };
 
 export default Comments;
