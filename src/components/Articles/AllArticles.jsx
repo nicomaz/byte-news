@@ -24,7 +24,11 @@ const Articles = (sortedArticles) => {
 
   return (
     <ul>
-      <LargeArticleCard mainArticle={mainArticle} />
+      <div className="main-container">
+        <li>
+          <LargeArticleCard mainArticle={mainArticle} />
+        </li>
+      </div>
       {secondaryArticles.map((article) => {
         return (
           <li key={article.article_id}>
@@ -35,7 +39,7 @@ const Articles = (sortedArticles) => {
       <div className="tertiary-container">
         {tertiaryArticles.map((article) => {
           return (
-            <li key={article.article_id}>
+            <li className="tertiary-article-card" key={article.article_id}>
               <SmallArticleCard article={article} />
             </li>
           );

@@ -6,7 +6,7 @@ const SmallArticleCard = ({ article }) => {
     article;
 
   return (
-    <div className="tertiary-article-card">
+    <>
       <Link to={`/article/${article.article_id}`}>
         <img src={article_img_url} alt="" />
       </Link>
@@ -21,7 +21,7 @@ const SmallArticleCard = ({ article }) => {
         <h2 className="article-title">{title}</h2>
         <ExtraButton extra="Read" />
       </Link>
-    </div>
+    </>
   );
 };
 

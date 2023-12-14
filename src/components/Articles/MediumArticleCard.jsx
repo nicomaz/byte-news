@@ -17,8 +17,10 @@ const MediumArticleCard = ({ article }) => {
           <img src={article_img_url} alt="" />
           <h2 className="article-title">{title}</h2>
         </div>
-      </Link>
-      <VoteAndCommentButtons props={[votes, comment_count]} />
+        </Link>
+        <VoteAndCommentButtons
+          props={[votes, comment_count, article.article_id]}
+        />
     </div>
   );
 };

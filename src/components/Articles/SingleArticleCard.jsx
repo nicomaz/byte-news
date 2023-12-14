@@ -1,6 +1,7 @@
 import { setDate } from "../../utils/getDate";
 import VoteOnButton from "../Buttons/VoteOnButton";
 import VotesButton from "../Buttons/VotesButton";
+import { Link } from "react-router-dom";
 
 const SingleArticleCard = ({ article }) => {
   const {
@@ -26,12 +27,14 @@ const SingleArticleCard = ({ article }) => {
         <div className="article-information">
           <span id="date">{date}</span>
         </div>
-        <h2> {title}</h2>
-        <img
-          className="center"
-          src={article_img_url}
-          alt="article image, to be updated"
-        />
+        <Link to={`/article/${article.article_id}`}>
+          <h2> {title}</h2>
+          <img
+            className="center"
+            src={article_img_url}
+            alt="article image, to be updated"
+          />
+        </Link>
         <div className="article-information">
           <h3>
             <span className="accent-2">by</span>
