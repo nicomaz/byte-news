@@ -23,7 +23,7 @@ export const getCommentsByArticleId = (articleId) => {
 };
 
 export const voteOnArticle = (articleId, vote) => {
-  return byteNews.send(`/articles/${articleId}`, vote).then((res) => {
+  return byteNews.patch(`/articles/${articleId}`, vote).then((res) => {
     return res.data.article;
   });
 };
