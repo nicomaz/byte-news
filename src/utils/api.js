@@ -41,3 +41,11 @@ export const voteOnArticle = (articleId, vote) => {
       }
     });
 };
+
+export const commentOnArticle = (articleId, comment) => {
+  return byteNews
+    .post(`/articles/${articleId}/comments`, comment)
+    .then((res) => {
+      return res.data.comment;
+    });
+};
