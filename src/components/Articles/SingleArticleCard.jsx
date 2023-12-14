@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { setDate } from "../../utils/getDate";
 import VoteOnButton from "../Buttons/VoteOnButton";
-import VotesButton from "../Buttons/VotesButton";
 import { Link } from "react-router-dom";
+import Votes from "../Buttons/Votes";
 
 const SingleArticleCard = ({ article }) => {
   const { author, title, created_at, body, topic, votes, article_img_url } =
     article;
-
+    
   const [optimisticVotes, setOptimisticVotes] = useState(votes);
 
   let date = "";
@@ -44,7 +44,7 @@ const SingleArticleCard = ({ article }) => {
       <div className="singleCard-bottom">
         <p>{body}</p>
         <div className="article-information">
-          <VotesButton votes={optimisticVotes} />
+          <Votes votes={optimisticVotes} />
           <VoteOnButton setVotes={setOptimisticVotes} />
         </div>
       </div>

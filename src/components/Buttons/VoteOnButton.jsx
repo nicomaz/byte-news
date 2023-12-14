@@ -5,6 +5,7 @@ import { voteOnArticle } from "../../utils/api";
 const VoteOnButton = ({ setVotes }) => {
   const { articleId } = useParams();
   const [voteMsg, setVoteMsg] = useState({ inc_votes: 0 });
+  const [err, setErr] = useState(null);
 
   const updateVotes = (vote) => {
     setVotes((currVotes) => currVotes + vote);
@@ -12,7 +13,15 @@ const VoteOnButton = ({ setVotes }) => {
   };
 
   useEffect(() => {
-    voteOnArticle(articleId, voteMsg);
+    voteOnArticle(articleId, voteMsg).catch((err) => {
+      console.log(err.response.status, err.response.data.msg);
+      setErr(err.response);
+      if (voteMsg.inc_votes === 1) {
+        setVotes((currVotes) => currVotes - 1);
+      } else {
+        setVotes((currVotes) => currVotes + 1);
+      }
+    });
   }, [voteMsg]);
 
   return (

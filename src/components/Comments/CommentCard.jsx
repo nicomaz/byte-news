@@ -1,4 +1,4 @@
-import VotesButton from "../Buttons/VotesButton";
+import Votes from "../Buttons/Votes";
 
 const CommentCard = ({ comment }) => {
   const { body, author, votes } = comment;
@@ -9,7 +9,7 @@ const CommentCard = ({ comment }) => {
         <span className="accent">{author}</span>
         <span id="body">{body}</span>
         <span></span>
-        <VotesButton votes={votes} />
+        <Votes votes={votes} />
       </div>
     </div>
   );
