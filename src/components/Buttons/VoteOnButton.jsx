@@ -10,19 +10,15 @@ const VoteOnButton = ({ setVotes }) => {
   const updateVotes = (vote) => {
     setVotes((currVotes) => currVotes + vote);
     setVoteMsg((currVotesMsg) => ({ ...currVotesMsg, inc_votes: vote }));
-  };
-
-  useEffect(() => {
     voteOnArticle(articleId, voteMsg).catch((err) => {
-      console.log(err.response.status, err.response.data.msg);
-      setErr(err.response);
+      setErr(err);
       if (voteMsg.inc_votes === 1) {
         setVotes((currVotes) => currVotes - 1);
       } else {
         setVotes((currVotes) => currVotes + 1);
       }
     });
-  }, [voteMsg]);
+  };
 
   return (
     <>
