@@ -1,9 +1,11 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { UserContext } from "../contexts/UserContext";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Header = () => {
   const { user } = useContext(UserContext);
+  const [link, setLink] = useState("/sign-in");
+
 
   return (
     <nav>
@@ -15,13 +17,15 @@ const Header = () => {
             </h1>
           </Link>
         </li>
-        <li>
-          <img
-            src={user.avater_url}
-            alt={`${user.username} icon`}
-            className="icon"
-          />
-        </li>
+        <Link to={link}>
+          <li>
+            <img
+              src={user.avater_url}
+              alt={`${user.username} icon`}
+              className="icon"
+            />
+          </li>
+        </Link>
       </ul>
     </nav>
   );

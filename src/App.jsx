@@ -6,6 +6,7 @@ import { UserProvider } from "./contexts/UserContext";
 import Article from "./pages/Article";
 import Header from "./components/Header";
 import { LoadingProvider } from "./contexts/Loading";
+import SignIn from "./pages/SignIn";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/article/:articleId" element={<Article />} />
+                <Route path="/sign-in" element={<SignIn />} />
               </Routes>
             </ArticlesProvider>
           </UserProvider>
