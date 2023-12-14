@@ -37,19 +37,19 @@
   padding: 0;
   cursor: default;
   list-style: none;
-  color: #1c1c1c;
+  color: var(--clr-dark);
 }
 
 body {
-  color: #1c1c1c;
-  background-color: #d5d5d5;
+  color: var(--clr-dark);
+  background-color: var(--clr-light);
   font-family: "Work Sans", sans-serif;
 }
 
 a {
   text-decoration: none;
   line-height: 1.4rem;
-  color: #1c1c1c;
+  color: var(--clr-dark);
   cursor: pointer;
 }
 
@@ -85,7 +85,7 @@ img {
 .interactions {
   cursor: pointer;
   padding: 0.5rem;
-  box-shadow: 0 3px 5px -5px #141fa0;
+  box-shadow: 0 3px 5px -5px var(--clr-darkblue);
 }
 
 h1 {
@@ -109,7 +109,7 @@ h1:hover {
 .accent {
   cursor: pointer;
   text-transform: uppercase;
-  color: #0d2f94dc;
+  color: var(--clr-blue);
   font-size: var(--size-sm);
   font-family: "Work Sans", sans-serif;
   font-weight: 500;
@@ -118,13 +118,13 @@ h1:hover {
 .accent-2 {
   font-weight: 600;
   font-size: var(--size-sm);
-  color: #1c1c1c8a;
+  color: var(--clr-dark) 8a;
 }
 
 .accent-3 {
   cursor: pointer;
   text-transform: uppercase;
-  color: #0d2f94dc;
+  color: var(--clr-blue);
   font-size: var(--size-sm);
   font-family: "Work Sans", sans-serif;
   font-weight: 500;
@@ -142,7 +142,7 @@ h1:hover {
   font-weight: 500;
   color: #0d193c;
   font-style: italic;
-  background-color: #ffffff69;
+  background-color: var(--clr-overlay);
 }
 
 /* `loading */
@@ -172,7 +172,7 @@ h1:hover {
 .header {
   width: 100%;
   padding-top: 2rem;
-  background-color: #d5d5d5;
+  background-color: var(--clr-light);
 }
 
 .header-menu {
@@ -185,7 +185,7 @@ h1:hover {
 
 .header,
 nav {
-  background-color: #d5d5d5;
+  background-color: var(--clr-light);
 }
 
 nav.container {
@@ -260,7 +260,7 @@ button.page-name {
 }
 
 button.page-name:hover {
-  color: #d5d5d5;
+  color: var(--clr-light);
 }
 
 /* `buttons */
@@ -282,7 +282,7 @@ button {
 }
 
 .material-symbols-outlined {
-  color: #1c1c1c;
+  color: var(--clr-dark);
   cursor: pointer;
 }
 
@@ -318,7 +318,7 @@ button.one {
 }
 
 .main-article-card {
-  background-color: #ffffff69;
+  background-color: var(--clr-overlay);
   padding: 2rem;
   margin-bottom: 1rem;
   border-radius: 5px;
@@ -345,7 +345,7 @@ button.one {
 /* `secondary article card */
 .secondary-article-card {
   text-align: left;
-  background-color: #ffffff69;
+  background-color: var(--clr-overlay);
   padding: 1rem 1rem;
   margin: 1rem 0rem;
   border-radius: 5px;
@@ -383,7 +383,7 @@ li.tertiary-article-card {
   flex: 1 0 1px;
   width: 1;
   text-align: left;
-  background-color: #ffffff69;
+  background-color: var(--clr-overlay);
   padding: 1rem;
 }
 
