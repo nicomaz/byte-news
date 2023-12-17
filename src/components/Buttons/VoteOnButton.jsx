@@ -1,22 +1,19 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { voteOnArticle } from "../../utils/api";
+import Modal from "./Modal";
 
-const VoteOnButton = ({ setVotes }) => {
+const VoteOnButton = ({ setRenderedVotes }) => {
+  const [error, setError] = useState(null);
   const { articleId } = useParams();
-  const [voteMsg, setVoteMsg] = useState({ inc_votes: 0 });
-  const [err, setErr] = useState(null);
 
-  const updateVotes = (vote) => {
-    setVotes((currVotes) => currVotes + vote);
-    setVoteMsg((currVotesMsg) => ({ ...currVotesMsg, inc_votes: vote }));
-    voteOnArticle(articleId, voteMsg).catch((err) => {
-      setErr(err);
-      if (voteMsg.inc_votes === 1) {
-        setVotes((currVotes) => currVotes - 1);
-      } else {
-        setVotes((currVotes) => currVotes + 1);
-      }
+  const updateVotes = (requestedVote) => {
+    setRenderedVotes((currRenderedVotes) => currRenderedVotes + requestedVote);
+    voteOnArticle(articleId, { inc_votes: requestedVote }).catch((err) => {
+      setError({ message: err.message });
+      setRenderedVotes(
+        (currRenderedVotes) => currRenderedVotes - requestedVote
+      );
     });
   };
 
@@ -39,6 +36,7 @@ const VoteOnButton = ({ setVotes }) => {
         >
           <span className="material-symbols-outlined">thumb_down</span>
         </button>
+        {error && <Modal message={error.message} setError={setError}/>}
       </div>
     </>
   );

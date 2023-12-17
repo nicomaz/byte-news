@@ -7,9 +7,8 @@ import Votes from "../Buttons/Votes";
 const SingleArticleCard = ({ article }) => {
   const { author, title, created_at, body, topic, votes, article_img_url } =
     article;
-    
-  const [optimisticVotes, setOptimisticVotes] = useState(votes);
 
+  const [renderedVotes, setRenderedVotes] = useState(votes);
   let date = "";
 
   if (created_at) {
@@ -44,8 +43,11 @@ const SingleArticleCard = ({ article }) => {
       <div className="singleCard-bottom">
         <p>{body}</p>
         <div className="article-information">
-          <Votes votes={optimisticVotes} />
-          <VoteOnButton setVotes={setOptimisticVotes} />
+          <Votes votes={renderedVotes} />
+          <VoteOnButton
+            setRenderedVotes={setRenderedVotes}
+            renderedVotes={renderedVotes}
+          />
         </div>
       </div>
     </div>
