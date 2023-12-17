@@ -24,20 +24,7 @@ export const getCommentsByArticleId = (articleId) => {
 };
 
 export const voteOnArticle = (articleId, vote) => {
-  return byteNews
-    .patch(`/articles/${articleId}`, vote)
-    .then((res) => {
-      return res.data.article;
-    })
-    .catch((err) => {
-      if (err.response) {
-        console.log(err.response.data.msg);
-      } else if (err.request) {
-        console.log(
-          "Network error, please check your connection and try again"
-        );
-      } else {
-        console.log("An error occurred:", err);
-      }
-    });
+  return byteNews.patch(`/articles/${articleId}`, vote).then((res) => {
+    return res.data.article;
+  });
 };
