@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import CommentsButton from "./CommentsButton";
+import Votes from "./Votes";
 import ExtraButton from "./ExtraButton";
-import VotesButton from "./VotesButton";
 
 const VoteAndCommentButtons = ({ props }) => {
   const votes = props[0];
@@ -10,7 +10,7 @@ const VoteAndCommentButtons = ({ props }) => {
 
   return (
     <div className="article-information">
-      <VotesButton votes={votes} />
+      <Votes votes={votes} />
       <CommentsButton comments={comments} />
       <Link to={`/article/${articleId}`}>
         <ExtraButton extra="Read" />

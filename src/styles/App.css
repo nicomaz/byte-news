@@ -48,10 +48,8 @@ body {
 
 a {
   text-decoration: none;
-  text-align: justify;
   line-height: 1.4rem;
   color: #1c1c1c;
-  text-align: center;
   cursor: pointer;
 }
 
@@ -73,6 +71,7 @@ img {
 .right {
   display: grid;
   justify-content: end;
+  text-align: right;
 }
 
 .center {
@@ -276,7 +275,7 @@ button.page-name:hover {
   margin: 0.4em 0em;
   border-width: 0;
   cursor: pointer;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 button {
@@ -288,8 +287,67 @@ button {
   cursor: pointer;
 }
 
+.btns .material-symbols-outlined {
+  color: #3e425fbd;
+}
+
 .toggle {
   margin: 0 auto;
+}
+
+.article-information-2 > button {
+  border-radius: 5px;
+  padding: 0.2rem 0.5rem;
+  border: solid #98b9eb80;
+  box-shadow: 0 3px 3px 0 #abcbfb80, 0 2px 2px 0 #707b9d;
+  color: #11559e;
+  font-size: 0.9rem;
+}
+
+button.one {
+  margin-right: 0.5rem;
+}
+
+/* modal */
+.modalBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  z-index: 10;
+  overflow: hidden;
+  background-color: #ffffff;
+  border-radius: 5px;
+}
+
+.error-msg {
+  padding: 1rem;
+  text-align: center;
+}
+
+.modal-close {
+  padding: 0rem 1rem;
+  display: flex;
+  justify-content: end;
+}
+
+.display-none {
+  display: none;
+}
+
+.display-block {
+  display: block;
 }
 /* `main article card */
 .main-container {
@@ -321,11 +379,17 @@ button {
   justify-content: space-between;
 }
 
+.article-information-2 {
+  display: flex;
+  justify-content: flex-end;
+}
+
 /* `secondary article card */
 .secondary-article-card {
   text-align: left;
   background-color: #ffffff69;
   padding: 1rem 1rem;
+  margin: 1rem 0rem;
   border-radius: 5px;
 }
 
@@ -353,6 +417,7 @@ button {
   height: 100%;
   gap: 3px 3px;
   justify-content: stretch;
+  margin: 1rem 0rem;
 }
 
 li.tertiary-article-card {

@@ -1,4 +1,5 @@
 import axios from "axios";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const byteNews = axios.create({
   baseURL: "https://sunshine-news.onrender.com/api",
@@ -19,5 +20,11 @@ export const getIndividualArticle = (articleId) => {
 export const getCommentsByArticleId = (articleId) => {
   return byteNews.get(`/articles/${articleId}/comments`).then((res) => {
     return res.data.comments;
+  });
+};
+
+export const voteOnArticle = (articleId, vote) => {
+  return byteNews.patch(`/articles/${articleId}`, vote).then((res) => {
+    return res.data.article;
   });
 };

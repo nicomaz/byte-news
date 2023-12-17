@@ -4,8 +4,6 @@ import SingleArticleCard from "./SingleArticleCard";
 import { LoadingContext } from "../../contexts/Loading";
 import PostCommentForm from "../Comments/PostCommentForm";
 import Comments from "../Comments/Comments";
-import ExtraButton from "../Buttons/ExtraButton";
-import { Link } from "react-router-dom";
 import CommentCard from "../Comments/CommentCard";
 
 const SingleArticle = ({ articleId }) => {

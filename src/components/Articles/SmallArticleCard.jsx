@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import ExtraButton from "../Buttons/ExtraButton";
 
 const SmallArticleCard = ({ article }) => {
   const { author, title, topic, votes, comment_count, article_img_url } =
@@ -18,10 +19,7 @@ const SmallArticleCard = ({ article }) => {
       </h3>
       <Link to={`/article/${article.article_id}`}>
         <h2 className="article-title">{title}</h2>
-        <span className="btns small-text">
-          Read
-          <span className="material-symbols-outlined">chevron_right</span>
-        </span>
+        <ExtraButton extra="Read" />
       </Link>
     </>
   );
