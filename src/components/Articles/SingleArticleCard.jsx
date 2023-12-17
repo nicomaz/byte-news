@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { setDate } from "../../utils/getDate";
-import VoteOnButton from "../Buttons/VoteOnButton";
+import VoteOnButton from "../Buttons/VoteButton";
 import { Link } from "react-router-dom";
 import Votes from "../Buttons/Votes";
 
