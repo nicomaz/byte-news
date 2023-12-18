@@ -3,7 +3,6 @@ import { useState } from "react";
 const Modal = (props) => {
   const [isOpen, setIsOpen] = useState(true);
   const { setError } = props;
-
   return (
     <section>
       <div className={isOpen ? "display-block" : "display-none"}>
@@ -21,8 +20,8 @@ const Modal = (props) => {
             </button>
           </nav>
           <div className="accent error-msg">
-            <p>A {props.message} has occured</p>
-            <p>Please refresh the page or try again</p>
+            <p>{props.error.title}</p>
+            <p>{props.error.message}</p>
           </div>
         </div>
       </div>

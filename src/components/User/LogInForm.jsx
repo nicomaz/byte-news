@@ -2,8 +2,10 @@ import { useContext, useState } from "react";
 import { UserContext } from "../../contexts/UserContext";
 import { getUser } from "../../utils/api";
 import { useNavigate } from "react-router-dom";
+import Modal from "../Buttons/Modal";
 
 const LoginForm = () => {
+  const [error, setError] = useState(null);
   const { user, setUser } = useContext(UserContext);
   const [input, setInput] = useState("");
   let navigate = useNavigate();
@@ -14,7 +16,6 @@ const LoginForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(input);
     getUser(input)
       .then((res) => {
         setUser((currUser) => ({
@@ -26,6 +27,13 @@ const LoginForm = () => {
       })
       .then(() => {
         navigate(`/users/${user.username}`);
+      })
+      .catch((err) => {
+        setError({
+          title: "Sorry we don't recognise that username",
+          message: "Please try again",
+        });
+        setInput("");
       });
   };
 
@@ -46,6 +54,7 @@ const LoginForm = () => {
         </label>
         <button className="btns">Sign in</button>
       </form>
+      {error && <Modal error={error} setError={setError} />}
     </main>
   );
 };

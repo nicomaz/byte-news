@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { UserContext } from "../contexts/UserContext";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const { user } = useContext(UserContext);
