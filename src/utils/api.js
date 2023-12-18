@@ -38,3 +38,12 @@ export const commentOnArticle = (articleId, comment) => {
       return res.data.comment;
     });
 };
+
+export const getUser = (username) => {
+  console.log(username)
+  return byteNews
+  .get(`/users/${username}`)
+  .then((res) => {
+    return res.data.user
+  })
+}
