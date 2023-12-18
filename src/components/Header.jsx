@@ -4,8 +4,6 @@ import { Link, useNavigate } from "react-router-dom";
 
 const Header = () => {
   const { user } = useContext(UserContext);
-  const [link, setLink] = useState("/sign-in");
-
 
   return (
     <nav>
@@ -17,7 +15,11 @@ const Header = () => {
             </h1>
           </Link>
         </li>
-        <Link to={link}>
+        <Link
+          to={
+            user.username === "guest" ? "/sign-in" : `/users/${user.username}`
+          }
+        >
           <li>
             <img
               src={user.avater_url}
