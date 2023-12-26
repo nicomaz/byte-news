@@ -3,7 +3,7 @@ import { UserContext } from "../../contexts/UserContext";
 import { commentOnArticle } from "../../utils/api";
 import { Link, useParams } from "react-router-dom";
 
-const PostCommentForm = () => {
+const PostCommentForm = (props) => {
   const { user } = useContext(UserContext);
   const [formData, setFormData] = useState({ username: "", body: "" });
   const { articleId } = useParams();

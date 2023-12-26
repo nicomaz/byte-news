@@ -8,6 +8,7 @@ const LoginForm = () => {
   const [error, setError] = useState(null);
   const { user, setUser } = useContext(UserContext);
   const [input, setInput] = useState("");
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   let navigate = useNavigate();
 
   const handleChange = (event) => {
@@ -24,11 +25,12 @@ const LoginForm = () => {
           ["name"]: res.name,
           ["avater_url"]: res.avatar_url,
         }));
+        setIsLoggedIn(true);
       })
       .then(() => {
-        navigate(`/users/${user.username}`);
+        navigate(`/`);
       })
-      .catch((err) => {
+      .catch(() => {
         setError({
           title: "Sorry we don't recognise that username",
           message: "Please try again",

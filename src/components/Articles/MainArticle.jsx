@@ -57,7 +57,7 @@ const SingleArticle = ({ articleId }) => {
       <SingleArticleCard article={article} />
       <div className="comments-container">
         <h3 className="container-name">Comments</h3>
-        <PostCommentForm />
+        <PostCommentForm props={setComments}/>
         <button className="btns toggle" onClick={() => showResults()}>
           {comments.length ? showMoreMessage: null}
           <span className="material-symbols-outlined">{comments.length ? showLessMessage: null}</span>

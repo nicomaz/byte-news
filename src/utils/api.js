@@ -24,26 +24,26 @@ export const getCommentsByArticleId = (articleId) => {
 };
 
 export const voteOnArticle = (articleId, vote) => {
-  return byteNews
-    .patch(`/articles/${articleId}`, vote)
-    .then((res) => {
-      return res.data.article;
-    })
+  return byteNews.patch(`/articles/${articleId}`, vote).then((res) => {
+    return res.data.article;
+  });
 };
 
-export const commentOnArticle = (articleId, comment) => {
+export const commentOnArticle = (articleId, body) => {
+  const postComment = {postComment: body}
   return byteNews
-    .post(`/articles/${articleId}/comments`, comment)
+    .post(`/articles/${articleId}/comments`, postComment)
     .then((res) => {
+      console.log(res)
       return res.data.comment;
+    })
+    .catch((err) => {
+      console.log(err);
     });
 };
 
 export const getUser = (username) => {
-  console.log(username)
-  return byteNews
-  .get(`/users/${username}`)
-  .then((res) => {
-    return res.data.user
-  })
-}
+  return byteNews.get(`/users/${username}`).then((res) => {
+    return res.data.user;
+  });
+};

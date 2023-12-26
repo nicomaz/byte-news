@@ -36,7 +36,7 @@ const SingleArticleCard = ({ article }) => {
           </h3>
           <h3>
             <span className="accent-2">in</span>
-            <span className="accent-3"> {topic}</span>
+            <span className="accent"> {topic}</span>
           </h3>
         </div>
       </div>
