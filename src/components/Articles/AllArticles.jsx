@@ -23,29 +23,27 @@ const Articles = (sortedArticles) => {
   }
 
   return (
-    <ul>
-      <div className="main-container">
-        <li>
-          <LargeArticleCard mainArticle={mainArticle} />
-        </li>
-      </div>
-      {secondaryArticles.map((article) => {
-        return (
-          <li key={article.article_id}>
-            <MediumArticleCard article={article} />
-          </li>
-        );
-      })}
-      <div className="tertiary-container">
-        {tertiaryArticles.map((article) => {
+    <div>
+      <LargeArticleCard mainArticle={mainArticle} />
+      <ul className="articles">
+        {secondaryArticles.map((article) => {
           return (
-            <li className="tertiary-article-card" key={article.article_id}>
-              <SmallArticleCard article={article} />
+            <li key={article.article_id}>
+              <MediumArticleCard article={article} />
             </li>
           );
         })}
-      </div>
-    </ul>
+        <div className="tertiary-container">
+          {tertiaryArticles.map((article) => {
+            return (
+              <li className="tertiary-article-card" key={article.article_id}>
+                <SmallArticleCard article={article} />
+              </li>
+            );
+          })}
+        </div>
+      </ul>
+    </div>
   );
 };
 

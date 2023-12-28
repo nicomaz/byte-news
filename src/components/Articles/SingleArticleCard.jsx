@@ -21,14 +21,8 @@ const SingleArticleCard = ({ article }) => {
         <div className="article-information">
           <span id="date">{date}</span>
         </div>
-        <Link to={`/article/${article.article_id}`}>
-          <h2> {title}</h2>
-          <img
-            className="center"
-            src={article_img_url}
-            alt="article image, to be updated"
-          />
-        </Link>
+        <h2> {title}</h2>
+        <img src={article_img_url} alt="article image, to be updated" />
         <div className="article-information">
           <h3>
             <span className="accent-2">by</span>
