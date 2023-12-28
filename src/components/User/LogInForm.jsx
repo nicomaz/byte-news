@@ -3,8 +3,10 @@ import { UserContext } from "../../contexts/UserContext";
 import { getUser } from "../../utils/api";
 import { useNavigate } from "react-router-dom";
 import Modal from "../Buttons/Modal";
+import { LoadingContext } from "../../contexts/Loading";
 
 const LoginForm = () => {
+  const { isLoading, setIsLoading } = useContext(LoadingContext);
   const [error, setError] = useState(null);
   const { user, setUser } = useContext(UserContext);
   const [input, setInput] = useState("");
@@ -17,6 +19,7 @@ const LoginForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    setIsLoading(true);
     getUser(input)
       .then((res) => {
         setUser((currUser) => ({
@@ -26,6 +29,7 @@ const LoginForm = () => {
           ["avater_url"]: res.avatar_url,
         }));
         setIsLoggedIn(true);
+        setIsLoading(false);
       })
       .then(() => {
         navigate(`/`);
@@ -39,20 +43,26 @@ const LoginForm = () => {
       });
   };
 
+  if (isLoading) {
+    return <div className="loading">Logging in...</div>;
+  }
+
   return (
     <main className="container">
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="username" className="accent">
+      <h2 className="title"> LOGIN </h2>
+      <form className="login-form" autocomplete="off" onSubmit={handleSubmit}>
+        <input
+          className="login-input"
+          type="text"
+          id="username"
+          name="username"
+          value={input}
+          placeholder="username"
+          onChange={handleChange}
+          required
+        />
+        <label htmlFor="username" className="label">
           Username
-          <input
-            type="text"
-            id="username"
-            name="username"
-            value={input}
-            onChange={handleChange}
-            placeholder="type here"
-            required
-          />
         </label>
         <button className="btns">Sign in</button>
       </form>

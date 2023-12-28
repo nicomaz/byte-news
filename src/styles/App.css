@@ -10,6 +10,7 @@
   --clr-red: #764d4d;
   --clr-darkred: #573939;
   --clr-overlay: #ffffff69;
+  --clr-grey: rgba(68, 68, 79, 0.412);
 
   --color-primary: #ffffff;
   --color-secondary: #2756a6;
@@ -155,6 +156,13 @@ h2 {
   background-color: var(--clr-overlay);
 }
 
+.title {
+  padding-top: 60px;
+  font-size: var(--size-2xl);
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: -1px;
+  font-weight: 700;
+}
 /* `loading */
 .loading {
   font-family: "Montserrat", sans-serif;
@@ -322,7 +330,7 @@ button.one {
 }
 
 /* comments */
-#comment {
+.comment {
   display: flex;
   flex-direction: column;
   width: 70%;
@@ -348,11 +356,12 @@ button.one {
   }
 }
 
-.comment-form {
+.form {
   text-align: center;
 }
 
-.comment-form > button {
+.form > button,
+.login-form > button {
   margin-top: auto;
   background-color: var(--clr-blue);
   border: 1px solid transparent;
@@ -380,12 +389,71 @@ button.one {
   outline-offset: 2px;
 }
 
-@media (min-width: 768px) {
-  .comment-form > button {
-    padding: 0.75rem 1.5rem;
+/* login */
+form.login-form {
+  margin-top: 5px;
+}
+.login-form {
+  position: relative;
+  padding: 14px 0 0;
+  width: 60%;
+  margin: auto;
+}
+
+.login-input {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid var(--clr-blue);
+  outline: 0;
+  font-size: var(--size-lg);
+  color: var(--clr-dark);
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+
+  &::placeholder {
+    color: transparent;
+  }
+
+  &:placeholder-shown ~ .label {
+    font-size: var(--size-lg);
+    cursor: text;
+    top: 20px;
   }
 }
 
+.label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.3s;
+  font-size: 1rem;
+  color: var(--clr-grey);
+}
+
+.login-input:focus {
+  ~ .label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: var(--size-base);
+    color: var(--clr-darkblue);
+    font-weight: 600;
+  }
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, var(--clr-blue), var(--clr-darkblue));
+  border-image-slice: 1;
+}
+
+.login-form > button {
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
 /* modal */
 .modalBackdrop {
   position: fixed;

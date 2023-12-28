@@ -43,11 +43,12 @@ const PostCommentForm = (props) => {
   }
 
   return (
-    <form className="comment-form" onSubmit={handleSubmit}>
+    <form className="form" onSubmit={handleSubmit}>
       <label htmlFor="comment">
         <input
           type="text"
           id="comment"
+          className="comment"
           name="comment"
           value={formData.body}
           onChange={handleChange}
