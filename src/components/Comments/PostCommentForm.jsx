@@ -43,7 +43,7 @@ const PostCommentForm = (props) => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="comment-form" onSubmit={handleSubmit}>
       <label htmlFor="comment">
         <input
           type="text"
@@ -54,7 +54,7 @@ const PostCommentForm = (props) => {
           required
         />
       </label>
-      <button> Post comment </button>
+      <button> Post Comment</button>
       {error && <Modal message={error} setError={setError} />}
     </form>
   );

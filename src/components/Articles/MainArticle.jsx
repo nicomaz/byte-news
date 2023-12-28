@@ -50,22 +50,25 @@ const SingleArticle = ({ articleId }) => {
     });
   };
 
-
   return (
     <div className="article">
       <SingleArticleCard article={article} />
       <div className="comments-container">
         <h3 className="container-name">Comments</h3>
         <PostCommentForm setComments={setComments} />
-        <button className="btns toggle" onClick={() => showResults()}>
-          {comments.length ? showMoreMessage : null}
-          <span className="material-symbols-outlined">
-            {comments.length ? showLessMessage : null}
-          </span>
-        </button>
-        <Comments articleId={articleId} setComments={setComments} comments={comments}/>
+        <Comments
+          articleId={articleId}
+          setComments={setComments}
+          comments={comments}
+        />
         <ul className="container">{mapComments(showComments)}</ul>
         <ul className="container">
+          <button className="btns toggle" onClick={() => showResults()}>
+            {comments.length ? showMoreMessage : null}
+            <span className="material-symbols-outlined">
+              {comments.length ? showLessMessage : null}
+            </span>
+          </button>
           {showMore ? mapComments(moreComments) : null}
         </ul>
       </div>

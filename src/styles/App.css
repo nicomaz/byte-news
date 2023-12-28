@@ -321,6 +321,71 @@ button.one {
   margin-right: 0.5rem;
 }
 
+/* comments */
+#comment {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin: 0.5rem auto;
+  border-radius: 5px;
+  background-color: rgb(250, 251, 252);
+  border-color: rgb(223, 225, 230);
+  color: var(--clr-darkblue);
+  cursor: text;
+  border-width: 2px;
+  border-style: solid;
+  box-sizing: border-box;
+  transition: background-color 0.2s ease-in-out 0s,
+    border-color 0.2s ease-in-out 0s;
+  padding: 8px 6px;
+  height: 36px;
+  :hover {
+    background-color: rgb(235, 236, 240);
+  }
+  :focus {
+    background-color: rgb(255, 255, 255);
+    border-color: rgb(76, 154, 255);
+  }
+}
+
+.comment-form {
+  text-align: center;
+}
+
+.comment-form > button {
+  margin-top: auto;
+  background-color: var(--clr-blue);
+  border: 1px solid transparent;
+  border-radius: 0.75rem;
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: 600;
+  padding: 0.2rem 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  transition-duration: 0.2s;
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  touch-action: manipulation;
+  width: auto;
+}
+
+.comment-form > button:hover {
+  background-color: #374151;
+}
+
+.comment-form > button:focus {
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+@media (min-width: 768px) {
+  .comment-form > button {
+    padding: 0.75rem 1.5rem;
+  }
+}
+
 /* modal */
 .modalBackdrop {
   position: fixed;
