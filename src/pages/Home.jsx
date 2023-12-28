@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import { ArticlesContext } from "../contexts/Articles";
 import Articles from "../components/Articles/AllArticles";
-import Header from "../components/Header";
 import TopNavBar from "../components/TopNavBar";
 
 const Home = () => {
@@ -13,10 +12,10 @@ const Home = () => {
 
   return (
     <>
-      <nav className="container">
+      <nav>
         <TopNavBar />
       </nav>
-      <main className="container">
+      <main>
         <Articles
           mainArticle={mainArticle}
           secondaryArticles={secondaryArticles}

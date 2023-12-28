@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { setDate } from "../../utils/getDate";
-import VoteOnButton from "../Buttons/VoteOnButton";
+import VoteOnButton from "../Buttons/VoteButton";
 import { Link } from "react-router-dom";
 import Votes from "../Buttons/Votes";
 
@@ -9,8 +9,6 @@ const SingleArticleCard = ({ article }) => {
     article;
 
   const [renderedVotes, setRenderedVotes] = useState(votes);
-
-  console.log(renderedVotes)
   let date = "";
 
   if (created_at) {
@@ -23,14 +21,8 @@ const SingleArticleCard = ({ article }) => {
         <div className="article-information">
           <span id="date">{date}</span>
         </div>
-        <Link to={`/article/${article.article_id}`}>
-          <h2> {title}</h2>
-          <img
-            className="center"
-            src={article_img_url}
-            alt="article image, to be updated"
-          />
-        </Link>
+        <h2> {title}</h2>
+        <img src={article_img_url} alt="article image, to be updated" />
         <div className="article-information">
           <h3>
             <span className="accent-2">by</span>
@@ -38,7 +30,7 @@ const SingleArticleCard = ({ article }) => {
           </h3>
           <h3>
             <span className="accent-2">in</span>
-            <span className="accent-3"> {topic}</span>
+            <span className="accent"> {topic}</span>
           </h3>
         </div>
       </div>
@@ -46,7 +38,10 @@ const SingleArticleCard = ({ article }) => {
         <p>{body}</p>
         <div className="article-information">
           <Votes votes={renderedVotes} />
-          <VoteOnButton setRenderedVotes={setRenderedVotes} renderedVotes={renderedVotes}/>
+          <VoteOnButton
+            setRenderedVotes={setRenderedVotes}
+            renderedVotes={renderedVotes}
+          />
         </div>
       </div>
     </div>

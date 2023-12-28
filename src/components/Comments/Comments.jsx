@@ -1,16 +1,16 @@
 import { useEffect } from "react";
 import { getCommentsByArticleId } from "../../utils/api";
 
-const Comments = ({ articleId }) => {
-  const setComments = articleId[1];
+const Comments = (props) => {
+  const { articleId, setComments, comments } = props;
 
   useEffect(() => {
-    getCommentsByArticleId(articleId[0]).then((commentData) => {
+    getCommentsByArticleId(articleId).then((commentData) => {
       setComments(commentData);
     });
-  }, []);
+  }, [comments]);
 
-  if (!articleId[2].length) {
+  if (!comments.length) {
     return <div className=" msg center">No comments to show</div>;
   }
 };

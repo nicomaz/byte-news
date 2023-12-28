@@ -10,7 +10,10 @@ const VoteOnButton = ({ setRenderedVotes }) => {
   const updateVotes = (requestedVote) => {
     setRenderedVotes((currRenderedVotes) => currRenderedVotes + requestedVote);
     voteOnArticle(articleId, { inc_votes: requestedVote }).catch((err) => {
-      setError({ message: err.message });
+      setError({
+        title: err.message,
+        message: "Please refresh the page or try again at another time",
+      });
       setRenderedVotes(
         (currRenderedVotes) => currRenderedVotes - requestedVote
       );
@@ -36,7 +39,7 @@ const VoteOnButton = ({ setRenderedVotes }) => {
         >
           <span className="material-symbols-outlined">thumb_down</span>
         </button>
-        {error && <Modal message={error.message} setError={setError}/>}
+        {error && <Modal message={error} setError={setError} />}
       </div>
     </>
   );

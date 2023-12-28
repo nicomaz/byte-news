@@ -1,12 +1,12 @@
 import { useParams } from "react-router-dom";
-import SingleArticle from "../components/Articles/SingleArticle";
+import MainArticle from "../components/Articles/MainArticle";
 
 const Article = () => {
   const { articleId } = useParams();
 
   return (
     <>
-      <SingleArticle articleId={articleId} />
+      <MainArticle articleId={articleId} />
     </>
   );
 };

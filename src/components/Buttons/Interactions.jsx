@@ -12,9 +12,6 @@ const VoteAndCommentButtons = ({ props }) => {
     <div className="article-information">
       <Votes votes={votes} />
       <CommentsButton comments={comments} />
-      <Link to={`/article/${articleId}`}>
-        <ExtraButton extra="Read" />
-      </Link>
     </div>
   );
 };
