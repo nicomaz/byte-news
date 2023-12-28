@@ -33,11 +33,9 @@ const SingleArticle = ({ articleId }) => {
     });
   }, []);
 
-
   if (isLoading) {
     return <div className="loading">LOADING...</div>;
   }
-
 
   const showComments = [...comments].slice(0, 3);
   const moreComments = [...comments].slice(3);
@@ -52,17 +50,20 @@ const SingleArticle = ({ articleId }) => {
     });
   };
 
+
   return (
     <div className="article">
       <SingleArticleCard article={article} />
       <div className="comments-container">
         <h3 className="container-name">Comments</h3>
-        <PostCommentForm props={setComments}/>
+        <PostCommentForm setComments={setComments} />
         <button className="btns toggle" onClick={() => showResults()}>
-          {comments.length ? showMoreMessage: null}
-          <span className="material-symbols-outlined">{comments.length ? showLessMessage: null}</span>
+          {comments.length ? showMoreMessage : null}
+          <span className="material-symbols-outlined">
+            {comments.length ? showLessMessage : null}
+          </span>
         </button>
-        <Comments articleId={[articleId, setComments, comments]} />
+        <Comments articleId={articleId} setComments={setComments} comments={comments}/>
         <ul className="container">{mapComments(showComments)}</ul>
         <ul className="container">
           {showMore ? mapComments(moreComments) : null}
