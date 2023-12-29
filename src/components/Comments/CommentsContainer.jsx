@@ -26,7 +26,11 @@ const CommentsContainer = ({ articleId }) => {
       <PostCommentForm setComments={setComments} />
       <ul>
         {firstThreeComments.map((comment) => {
-          return <CommentCard comment={comment} setComments={setComments} />;
+          return (
+            <li key={comment.comment_id} className="container comments">
+              <CommentCard comment={comment} setComments={setComments} />{" "}
+            </li>
+          );
         })}
         <button className="btns toggle" onClick={() => setShowMore(!showMore)}>
           {showMore ? "Show less" : "Show more"}
@@ -36,7 +40,11 @@ const CommentsContainer = ({ articleId }) => {
         </button>
         {showMore &&
           remainingComments.map((comment) => {
-            return <CommentCard comment={comment} setComments={setComments} />;
+            return (
+              <li key={comment.comment_id} className="container comments">
+                <CommentCard comment={comment} setComments={setComments} />{" "}
+              </li>
+            );
           })}
       </ul>
     </div>

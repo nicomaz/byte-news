@@ -15,7 +15,7 @@ const CommentCard = ({ comment, setComments }) => {
   };
 
   return (
-    <li className="container comments">
+    <div>
       <span className="accent">{author}</span>
       <span id="body">{body}</span>
       <div className="article-information">
@@ -33,7 +33,7 @@ const CommentCard = ({ comment, setComments }) => {
           confirmation={confirmation}
         />
       )}
-    </li>
+    </div>
   );
 };
 export default CommentCard;
