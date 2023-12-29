@@ -1,16 +1,23 @@
-import { useState } from "react";
+import { deleteComment, getCommentsByArticleId } from "../../utils/api";
 
-const Modal = ({ message, setIsDelete }) => {
-  const [isOpen, setIsOpen] = useState(true);
+const Modal = ({
+  message,
+  comment,
+  setComments,
+  setConfirmation,
+  confirmation,
+}) => {
+  const { comment_id, article_id } = comment;
+
   return (
     <section>
-      <div className={isOpen ? "display-block" : "display-none"}>
+      <div className={confirmation ? "display-block" : "display-none"}>
         <div className="modal-container">
           <nav className="right">
             <button
               className="btns modal-close"
               onClick={() => {
-                setIsOpen(false);
+                setConfirmation(false);
               }}
             >
               {" "}
@@ -21,15 +28,21 @@ const Modal = ({ message, setIsDelete }) => {
             <p>{message}</p>
             <button
               onClick={() => {
-                setIsDelete(true);
+                deleteComment(comment_id)
+                  .then(() => {
+                    return getCommentsByArticleId(article_id);
+                  })
+                  .then((commentData) => {
+                    setComments(commentData);
+                    setConfirmation(false);
+                  });
               }}
             >
               Yes
             </button>{" "}
             <button
               onClick={() => {
-                setIsOpen(false);
-                setIsDelete(false);
+                setConfirmation(false);
               }}
             >
               No

@@ -38,6 +38,10 @@ export const commentOnArticle = (articleId, body) => {
     });
 };
 
+export const deleteComment = (commentId) => {
+  return byteNews.delete(`/comments/${commentId}`)
+};
+
 export const getUser = (username) => {
   return byteNews.get(`/users/${username}`).then((res) => {
     return res.data.user;

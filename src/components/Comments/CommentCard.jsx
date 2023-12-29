@@ -1,13 +1,12 @@
 import { useContext, useState } from "react";
-import Votes from "../Buttons/VoteTotalContainer";
 import { UserContext } from "../../contexts/UserContext";
+import Votes from "../Buttons/VoteTotalContainer";
 import Modal from "../Buttons/ConfirmationModal";
 
-const CommentCard = ({ comment }) => {
+const CommentCard = ({ comment, setComments }) => {
   const { body, author, votes } = comment;
   const { user } = useContext(UserContext);
   const [confirmation, setConfirmation] = useState(false);
-  const [isDelete, setIsDelete] = useState(false);
 
   const deleteCommentButton = () => {
     return (
@@ -16,7 +15,7 @@ const CommentCard = ({ comment }) => {
   };
 
   return (
-    <div className="container comments">
+    <li className="container comments">
       <span className="accent">{author}</span>
       <span id="body">{body}</span>
       <div className="article-information">
@@ -28,11 +27,13 @@ const CommentCard = ({ comment }) => {
       {confirmation && (
         <Modal
           message="Are you sure you want to delete this comment?"
-          setIsDelete={setIsDelete}
+          comment={comment}
+          setComments={setComments}
+          setConfirmation={setConfirmation}
+          confirmation={confirmation}
         />
       )}
-    </div>
+    </li>
   );
 };
-
 export default CommentCard;
