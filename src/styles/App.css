@@ -360,8 +360,7 @@ button.one {
   text-align: center;
 }
 
-.form > button,
-.login-form > button {
+button {
   margin-top: auto;
   background-color: var(--clr-blue);
   border: 1px solid transparent;
@@ -379,14 +378,18 @@ button.one {
   width: auto;
 }
 
-.comment-form > button:hover {
+button:hover {
   background-color: #374151;
 }
 
-.comment-form > button:focus {
+button:focus {
   box-shadow: none;
   outline: 2px solid transparent;
   outline-offset: 2px;
+}
+
+.comments > .article-information {
+  margin-top: 20px;
 }
 
 /* login */

@@ -1,11 +1,13 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useParams } from "react-router-dom";
 import { voteOnArticle } from "../../utils/api";
-import Modal from "./Modal";
+import Modal from "./ErrorModal";
+import { UserContext } from "../../contexts/UserContext";
 
 const VoteOnButton = ({ setRenderedVotes }) => {
   const [error, setError] = useState(null);
   const { articleId } = useParams();
+  const { user } = useContext(UserContext);
 
   const updateVotes = (requestedVote) => {
     setRenderedVotes((currRenderedVotes) => currRenderedVotes + requestedVote);
@@ -26,7 +28,12 @@ const VoteOnButton = ({ setRenderedVotes }) => {
         <button
           className="btns one"
           onClick={() => {
-            updateVotes(1);
+            user.username === "guest"
+              ? setError({
+                  title: "",
+                  message: "Please log in or sign up to vote",
+                })
+              : updateVotes(1);
           }}
         >
           <span className="material-symbols-outlined">thumb_up</span>
@@ -34,12 +41,17 @@ const VoteOnButton = ({ setRenderedVotes }) => {
         <button
           className="btns"
           onClick={() => {
-            updateVotes(-1);
+            user.username == "guest"
+              ? setError({
+                  title: "",
+                  message: "Please log in or sign up to vote",
+                })
+              : updateVotes(-1);
           }}
         >
           <span className="material-symbols-outlined">thumb_down</span>
         </button>
-        {error && <Modal message={error} setError={setError} />}
+        {error && <Modal error={error} setError={setError} />}
       </div>
     </>
   );

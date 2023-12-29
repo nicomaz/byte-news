@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { setDate } from "../../utils/getDate";
 import VoteOnButton from "../Buttons/VoteButton";
-import { Link } from "react-router-dom";
-import Votes from "../Buttons/Votes";
+import Votes from "../Buttons/VoteTotalContainer";
 
 const SingleArticleCard = ({ article }) => {
   const { author, title, created_at, body, topic, votes, article_img_url } =

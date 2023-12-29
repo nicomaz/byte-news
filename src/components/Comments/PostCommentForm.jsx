@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { UserContext } from "../../contexts/UserContext";
 import { commentOnArticle } from "../../utils/api";
 import { Link, useParams } from "react-router-dom";
-import Modal from "../Buttons/Modal";
+import Modal from "../Buttons/ErrorModal";
 
 const PostCommentForm = (props) => {
   const [error, setError] = useState(null);

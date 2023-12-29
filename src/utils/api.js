@@ -33,9 +33,12 @@ export const commentOnArticle = (articleId, body) => {
   return byteNews
     .post(`/articles/${articleId}/comments`, postComment)
     .then((res) => {
-      console.log(res);
       return res.data.comment;
     });
+};
+
+export const deleteComment = (commentId) => {
+  return byteNews.delete(`/comments/${commentId}`);
 };
 
 export const getUser = (username) => {

@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { ArticlesContext } from "../contexts/Articles";
-import Articles from "../components/Articles/AllArticles";
+import Articles from "../components/Articles/ArticlesContainer";
 import TopNavBar from "../components/TopNavBar";
 
 const Home = () => {
