@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { UserContext } from "../../contexts/UserContext";
 import { getUser } from "../../utils/api";
 import { useNavigate } from "react-router-dom";
-import Modal from "../Buttons/Modal";
+import Modal from "../Buttons/ErrorModal";
 import { LoadingContext } from "../../contexts/Loading";
 
 const LoginForm = () => {
@@ -50,7 +50,7 @@ const LoginForm = () => {
   return (
     <main className="container">
       <h2 className="title"> LOGIN </h2>
-      <form className="login-form" autocomplete="off" onSubmit={handleSubmit}>
+      <form className="login-form" autoComplete="off" onSubmit={handleSubmit}>
         <input
           className="login-input"
           type="text"

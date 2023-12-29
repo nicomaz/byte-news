@@ -8,7 +8,7 @@ const Comments = (props) => {
     getCommentsByArticleId(articleId).then((commentData) => {
       setComments(commentData);
     });
-  }, [comments]);
+  }, []);
 
   if (!comments.length) {
     return <div className=" msg center">No comments to show</div>;

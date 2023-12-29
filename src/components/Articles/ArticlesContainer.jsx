@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import { getAllArticles } from "../../utils/api";
 import { ArticlesContext } from "../../contexts/Articles";
 import LargeArticleCard from "./LargeArticleCard";

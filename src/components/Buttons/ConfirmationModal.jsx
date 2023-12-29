@@ -1,8 +1,7 @@
 import { useState } from "react";
 
-const Modal = (props) => {
+const Modal = ({ message, setIsDelete }) => {
   const [isOpen, setIsOpen] = useState(true);
-  const { setError } = props;
   return (
     <section>
       <div className={isOpen ? "display-block" : "display-none"}>
@@ -12,7 +11,6 @@ const Modal = (props) => {
               className="btns modal-close"
               onClick={() => {
                 setIsOpen(false);
-                setError(null);
               }}
             >
               {" "}
@@ -20,8 +18,22 @@ const Modal = (props) => {
             </button>
           </nav>
           <div className="accent error-msg">
-            <p>{props.error.title}</p>
-            <p>{props.error.message}</p>
+            <p>{message}</p>
+            <button
+              onClick={() => {
+                setIsDelete(true);
+              }}
+            >
+              Yes
+            </button>{" "}
+            <button
+              onClick={() => {
+                setIsOpen(false);
+                setIsDelete(false);
+              }}
+            >
+              No
+            </button>
           </div>
         </div>
       </div>

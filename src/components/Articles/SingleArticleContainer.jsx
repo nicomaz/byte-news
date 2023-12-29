@@ -3,8 +3,8 @@ import { getIndividualArticle } from "../../utils/api";
 import SingleArticleCard from "./SingleArticleCard";
 import { LoadingContext } from "../../contexts/Loading";
 import PostCommentForm from "../Comments/PostCommentForm";
-import Comments from "../Comments/Comments";
-import CommentCard from "../Comments/CommentCard";
+import Comments from "../Comments/CommentListContainer";
+import CommentCard from "../Comments/SingleCommentCard";
 
 const SingleArticle = ({ articleId }) => {
   const [comments, setComments] = useState([]);
