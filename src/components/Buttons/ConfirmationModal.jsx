@@ -1,4 +1,6 @@
+import { useState } from "react";
 import { deleteComment, getCommentsByArticleId } from "../../utils/api";
+import ErrorModal from "./ErrorModal";
 
 const Modal = ({
   message,
@@ -8,6 +10,24 @@ const Modal = ({
   confirmation,
 }) => {
   const { comment_id, article_id } = comment;
+  const [error, setError] = useState(null);
+
+  function deleteCommentReq() {
+    deleteComment(comment_id)
+      .then(() => {
+        return getCommentsByArticleId(article_id);
+      })
+      .then((commentData) => {
+        setComments(commentData);
+        setConfirmation(false);
+      })
+      .catch((err) => {
+        setError({
+          title: err.message,
+          message: "Please refresh the page or try again at another time",
+        });
+      });
+  }
 
   return (
     <section>
@@ -28,14 +48,7 @@ const Modal = ({
             <p>{message}</p>
             <button
               onClick={() => {
-                deleteComment(comment_id)
-                  .then(() => {
-                    return getCommentsByArticleId(article_id);
-                  })
-                  .then((commentData) => {
-                    setComments(commentData);
-                    setConfirmation(false);
-                  });
+                deleteCommentReq();
               }}
             >
               Yes
@@ -49,7 +62,8 @@ const Modal = ({
             </button>
           </div>
         </div>
-      </div>
+      </div>{" "}
+      {error && <ErrorModal error={error} setError={setError} />}
     </section>
   );
 };

@@ -1,8 +1,8 @@
 import { useContext, useState } from "react";
 import { useParams } from "react-router-dom";
 import { voteOnArticle } from "../../utils/api";
-import Modal from "./ErrorModal";
 import { UserContext } from "../../contexts/UserContext";
+import ErrorModal from "./ErrorModal";
 
 const VoteOnButton = ({ setRenderedVotes }) => {
   const [error, setError] = useState(null);
@@ -51,7 +51,7 @@ const VoteOnButton = ({ setRenderedVotes }) => {
         >
           <span className="material-symbols-outlined">thumb_down</span>
         </button>
-        {error && <Modal error={error} setError={setError} />}
+        {error && <ErrorModal error={error} setError={setError} />}
       </div>
     </>
   );

@@ -6,7 +6,7 @@ const MediumArticleCard = ({ article }) => {
     article;
 
   return (
-    <div className="secondary-article-card">
+    <>
       <h3 className="article-information">
         <span className="accent"> {author} </span>
         <span className="accent">
@@ -23,7 +23,7 @@ const MediumArticleCard = ({ article }) => {
       <VoteAndCommentButtons
         props={[votes, comment_count, article.article_id]}
       />
-    </div>
+    </>
   );
 };
 
