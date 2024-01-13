@@ -1,11 +1,27 @@
 import Dropdown from "./Buttons/Dropdown";
 
-const TopNavBar = ({ setIsSortedByPressed, isSortByPressed }) => {
+const TopNavBar = ({ setIsSortedByPressed, isSortByPressed, setSortBy }) => {
   return (
     <>
       <ul className="top-nav">
-        <li className="page-name">Trending</li>
-        <li className="page-name"> Latest </li>
+        <li
+          className="page-name"
+          tabIndex="0"
+          onClick={() => {
+            setSortBy(["created_at", "DESC"]);
+          }}
+        >
+          Latest
+        </li>
+        <li
+          className="page-name"
+          tabIndex="0"
+          onClick={() => {
+            setSortBy(["votes", "DESC"]);
+          }}
+        >
+          Trending
+        </li>
         <li className="page-name">
           <Dropdown dropdownName="Topics" />
         </li>

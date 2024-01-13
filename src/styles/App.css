@@ -324,7 +324,8 @@ ul.sort-by li {
   transition: background-color 0.5s ease-in-out 0s;
 }
 
-ul.sort-by li:hover {
+ul.sort-by li:hover,
+ul.sort-by li:focus {
   background-color: var(--clr-lightblue);
 }
 

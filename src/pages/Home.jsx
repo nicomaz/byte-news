@@ -34,6 +34,7 @@ const Home = () => {
         <TopNavBar
           setIsSortedByPressed={setIsSortedByPressed}
           isSortByPressed={isSortByPressed}
+          setSortBy={setSortBy}
         />
       </nav>
       {isSortByPressed ? <SortBy setSortBy={setSortBy} /> : null}

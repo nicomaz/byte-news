@@ -6,6 +6,7 @@ export default function SortBy({ setSortBy }) {
       <div className="bg">
         <ul className="sort-by">
           <li
+            tabIndex="0"
             onClick={() => {
               setSortBy(["created_at", "DESC"]);
             }}
@@ -13,6 +14,7 @@ export default function SortBy({ setSortBy }) {
             Newest
           </li>
           <li
+            tabIndex="0"
             onClick={() => {
               setSortBy(["created_at", "ASC"]);
             }}
@@ -20,6 +22,7 @@ export default function SortBy({ setSortBy }) {
             Oldest
           </li>
           <li
+            tabIndex="0"
             onClick={() => {
               setSortBy(["comment_count", "DESC"]);
             }}
@@ -27,6 +30,7 @@ export default function SortBy({ setSortBy }) {
             Most Comments
           </li>
           <li
+            tabIndex="0"
             onClick={() => {
               setSortBy(["comment_count", "ASC"]);
             }}
@@ -34,6 +38,7 @@ export default function SortBy({ setSortBy }) {
             Least Comments
           </li>
           <li
+            tabIndex="0"
             onClick={() => {
               setSortBy(["votes", "DESC"]);
             }}
@@ -41,6 +46,7 @@ export default function SortBy({ setSortBy }) {
             Most Votes
           </li>
           <li
+            tabIndex="0"
             onClick={() => {
               setSortBy(["votes", "ASC"]);
             }}
