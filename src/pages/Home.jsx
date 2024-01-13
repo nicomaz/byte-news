@@ -5,12 +5,6 @@ import TopNavBar from "../components/TopNavBar";
 import SortBy from "../components/SortBy";
 import { getSortedArticles } from "../utils/api";
 
-// /articles?sort_by=comment_count
-// /articles?sort_by=created_at
-// /articles?sort_by=votes
-// &order=ASC
-// &order=DESC
-
 const Home = () => {
   const [isSortByPressed, setIsSortedByPressed] = useState(false);
   const [sortBy, setSortBy] = useState();

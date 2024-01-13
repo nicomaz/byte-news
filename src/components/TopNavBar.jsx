@@ -1,6 +1,8 @@
 import Dropdown from "./Buttons/Dropdown";
 
 const TopNavBar = ({ setIsSortedByPressed, isSortByPressed, setSortBy }) => {
+  //TO DO : look into useSearchParams ?
+  
   return (
     <>
       <ul className="top-nav">
