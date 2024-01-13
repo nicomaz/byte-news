@@ -4,12 +4,12 @@ import { getIndividualArticle } from "../../utils/api";
 import SingleArticleCard from "./SingleArticleCard";
 import CommentsContainer from "../Comments/CommentsContainer";
 import PageNotFound from "../../pages/PageNotFound";
+import ErrorModal from "../Buttons/ErrorModal";
 
 const SingleArticleComponent = ({ articleId }) => {
   const { isLoading, setIsLoading } = useContext(LoadingContext);
   const [article, setArticle] = useState({});
   const [error, setError] = useState(false);
-  const [typeOfError, setTypeOfError] = useState();
 
   useEffect(() => {
     setIsLoading(true);
@@ -20,9 +20,17 @@ const SingleArticleComponent = ({ articleId }) => {
       })
       .catch((err) => {
         setIsLoading(false);
-        if (err.response.data.msg) {
-          setError(true);
-          setTypeOfError(404);
+        if (err.response) {
+          console.log(err.response.data);
+          setError({
+            title: err.response.data.msg,
+            message: "Would you like to go Home?",
+          });
+        } else {
+          setError({
+            title: err.message,
+            message: "Please refresh the page or try again at another time",
+          });
         }
       });
   }, []);
@@ -30,11 +38,10 @@ const SingleArticleComponent = ({ articleId }) => {
   if (isLoading) {
     return <div className="loading">Loading...</div>;
   }
-
   return (
     <>
-      {error & (typeOfError === 404) ? (
-        <PageNotFound />
+      {error ? (
+        <PageNotFound error={error} />
       ) : (
         <div className="article">
           <SingleArticleCard article={article} />

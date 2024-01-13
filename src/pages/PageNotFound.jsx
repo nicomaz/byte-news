@@ -1,13 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function PageNotFound() {
+export default function PageNotFound({ error }) {
+  console.log(error);
   return (
     <div className="page-center">
-      There's nothing here...
+      {error.title}
       <span className="page-text">
         <span className="clickable">
-          <Link to="/"> Click to go back HOME</Link>
+          <Link to="/"> {error.message}</Link>
         </span>
       </span>
     </div>
