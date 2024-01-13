@@ -260,12 +260,11 @@ h2 {
   display: flex;
   font-family: "Work Sans", sans-serif;
   font-size: var(--size-lg);
-  font-weight: 400;
   font-variation-settings: "wght" 582;
   letter-spacing: 0px;
   transition: 700ms ease;
   cursor: pointer;
-  color: var(--clr-light);
+  color: var(--clr-lightest);
 }
 
 .page-name:hover {
@@ -276,7 +275,7 @@ h2 {
 
 button.page-name {
   border: none;
-  font-weight: bold;
+  font-weight: 400;
 }
 
 button.page-name:hover {
@@ -509,13 +508,42 @@ form.login-form {
   z-index: 2;
 }
 
-/* .articles-container {
+.dropdown {
   display: flex;
   flex-direction: column;
-  justify-content: baseline;
-  flex-wrap: wrap;
-  align-content: space-evenly;
-} */
+  align-items: center;
+}
+
+.menu {
+  position: absolute;
+  text-align: center;
+  list-style-type: none;
+  margin-top: 27px;
+  background-color: var(--clr-blue);
+  border: 1px solid transparent;
+  border-bottom-left-radius: 0.75rem;
+  border-bottom-right-radius: 0.75rem;
+  color: var(--clr-lightest);
+  cursor: pointer;
+  font-weight: 500;
+  padding: 0.2rem 10px;
+  margin-bottom: 1rem;
+  text-align: center;
+  transition-duration: 0.2s;
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  touch-action: manipulation;
+  width: auto;
+  z-index: 10;
+}
+
+.menu > li {
+  margin: 0;
+  padding: 1px 9px;
+  background-color: var(--clr-blue);
+  color: var(--clr-lightest);
+  z-index: 10;
+}
 
 /* `main article card */
 .main-container {

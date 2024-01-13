@@ -16,18 +16,18 @@ export default function Dropdown({ dropdownName, dropdownItems }) {
   };
 
   return (
-    <>
+    <div className="dropdown">
       <button className="page-name" onClick={handleOpen}>
         {dropdownName}
         <span className="material-symbols-outlined">expand_more</span>
       </button>
       {open ? (
-        <ul>
+        <ul className="menu">
           {topics.map((topic) => {
             return <li key={topic.slug}>{topic.slug}</li>;
           })}
         </ul>
       ) : null}
-    </>
+    </div>
   );
 }
