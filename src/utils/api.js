@@ -16,6 +16,14 @@ export const getIndividualArticle = (articleId) => {
   });
 };
 
+export const getArticleByTopic = () => {};
+
+export const getTopics = () => {
+  return byteNews.get(`/topics`).then((res) => {
+    return res.data.topics;
+  });
+};
+
 export const getCommentsByArticleId = (articleId) => {
   return byteNews.get(`/articles/${articleId}/comments`).then((res) => {
     return res.data.comments;
