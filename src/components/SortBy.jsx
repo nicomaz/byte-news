@@ -7,42 +7,42 @@ export default function SortBy({ setSortBy }) {
         <ul className="sort-by">
           <li
             onClick={() => {
-              setSortBy("Newest");
+              setSortBy(["created_at", "DESC"]);
             }}
           >
             Newest
           </li>
           <li
             onClick={() => {
-              setSortBy("Oldest");
+              setSortBy(["created_at", "ASC"]);
             }}
           >
             Oldest
           </li>
           <li
             onClick={() => {
-              setSortBy("Most Comments");
+              setSortBy(["comment_count", "DESC"]);
             }}
           >
             Most Comments
           </li>
           <li
             onClick={() => {
-              setSortBy("Least Comments");
+              setSortBy(["comment_count", "ASC"]);
             }}
           >
             Least Comments
           </li>
           <li
             onClick={() => {
-              setSortBy("Most Votes");
+              setSortBy(["votes", "DESC"]);
             }}
           >
             Most Votes
           </li>
           <li
             onClick={() => {
-              setSortBy("Least Votes");
+              setSortBy(["votes", "ASC"]);
             }}
           >
             Least Votes

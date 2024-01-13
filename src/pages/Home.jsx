@@ -3,17 +3,30 @@ import { ArticlesContext } from "../contexts/Articles";
 import Articles from "../components/Articles/ArticlesContainer";
 import TopNavBar from "../components/TopNavBar";
 import SortBy from "../components/SortBy";
+import { getSortedArticles } from "../utils/api";
+
+// /articles?sort_by=comment_count
+// /articles?sort_by=created_at
+// /articles?sort_by=votes
+// &order=ASC
+// &order=DESC
 
 const Home = () => {
   const [isSortByPressed, setIsSortedByPressed] = useState(false);
   const [sortBy, setSortBy] = useState();
-  const { articles } = useContext(ArticlesContext);
+  const { articles, setArticles } = useContext(ArticlesContext);
 
   const mainArticle = articles[0];
   const secondaryArticles = articles.slice(1, 6);
   const tertiaryArticles = articles.slice(6, 12);
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    if (sortBy) {
+      getSortedArticles(sortBy[0], sortBy[1]).then((sortedArticles) => {
+        setArticles(sortedArticles);
+      });
+    }
+  }, [sortBy]);
 
   return (
     <>
