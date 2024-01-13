@@ -3,6 +3,7 @@ import { getTopics } from "../../utils/api";
 import { Link } from "react-router-dom";
 
 export default function Dropdown({ dropdownName, dropdownItems }) {
+    // refactor for reusability 
   const [topics, setTopics] = useState();
   const [open, setOpen] = useState(false);
 

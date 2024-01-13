@@ -226,7 +226,6 @@ h2 {
   list-style: none;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-  padding-bottom: 0.5rem;
 }
 
 .header-menu span {
@@ -295,6 +294,27 @@ h2.article-title {
   padding-bottom: 1rem;
   margin: 0;
 }
+
+/* sort by */
+.sort-by {
+  display: flex;
+}
+
+ul.sort-by {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  background-color: #11274e;
+  color: var(--clr-lightest);
+}
+
+ul.sort-by li {
+  display: flex;
+
+  color: var(--clr-lightest);
+  padding-top: 10px;
+}
+
 /* `buttons */
 
 .btns {

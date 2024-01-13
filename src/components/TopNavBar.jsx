@@ -1,16 +1,20 @@
 import Dropdown from "./Buttons/Dropdown";
 
-const TopNavBar = () => {
+const TopNavBar = ({ setIsSortedByPressed, isSortByPressed }) => {
   return (
     <>
       <ul className="top-nav">
         <li className="page-name">Trending</li>
         <li className="page-name"> Latest </li>
-
         <li className="page-name">
           <Dropdown dropdownName="Topics" />
         </li>
-        <li className="page-name">
+        <li
+          className="page-name"
+          onClick={() => {
+            setIsSortedByPressed(!isSortByPressed);
+          }}S
+        >
           <span className="material-symbols-outlined">sort</span>
         </li>
       </ul>
