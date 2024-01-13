@@ -13,9 +13,9 @@ const TopNavBar = ({ setIsSortedByPressed, isSortByPressed }) => {
           className="page-name"
           onClick={() => {
             setIsSortedByPressed(!isSortByPressed);
-          }}S
+          }}
         >
-          <span className="material-symbols-outlined">sort</span>
+          <span className="material-symbols-outlined sort">sort</span>
         </li>
       </ul>
     </>
