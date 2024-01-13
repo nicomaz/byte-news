@@ -22,6 +22,13 @@ export const getArticleByTopic = (topicName) => {
   });
 };
 
+export const getSortedArticles = (sortBy, order) => {
+  return byteNews
+    .get(`/articles?sort_by=${sortBy}&order=${order}`)
+    .then((res) => {
+      return res.data.articles;
+    });
+};
 export const getTopics = () => {
   return byteNews.get(`/topics`).then((res) => {
     return res.data.topics;

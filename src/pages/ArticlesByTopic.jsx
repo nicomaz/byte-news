@@ -4,6 +4,7 @@ import { getArticleByTopic } from "../utils/api";
 import MediumArticleCard from "../components/Articles/MediumArticleCard";
 
 export default function ArticlesByTopic() {
+  //TODO - add load more articles button after fixing API calls for limit & page querying
   const { topicId } = useParams();
   const [articles, setArticles] = useState();
 

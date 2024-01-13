@@ -226,7 +226,6 @@ h2 {
   list-style: none;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-  padding-bottom: 0.5rem;
 }
 
 .header-menu span {
@@ -295,6 +294,52 @@ h2.article-title {
   padding-bottom: 1rem;
   margin: 0;
 }
+
+/* sort by */
+.sort-by {
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+}
+
+ul.sort-by {
+  justify-content: space-between;
+  overflow: hidden;
+  overflow-x: auto;
+  white-space: nowrap;
+  color: var(--clr-lightest);
+  margin: 0 15px;
+}
+
+ul.sort-by li {
+  cursor: pointer;
+  display: flex;
+  color: var(--clr-lightest);
+  padding: 10px;
+  background-color: var(--clr-blue);
+  margin: 10px 3px 0px 3px;
+  border-radius: 5px;
+  padding: 0.2rem 0.5rem;
+  border: solid transparent;
+  transition: background-color 0.5s ease-in-out 0s;
+}
+
+ul.sort-by li:hover,
+ul.sort-by li:focus {
+  background-color: var(--clr-lightblue);
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.sort-by::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.sort-by {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
 /* `buttons */
 
 .btns {
@@ -322,6 +367,10 @@ button {
 
 .btns .material-symbols-outlined {
   color: #3e425fbd;
+}
+
+.material-symbols-outlined.sort {
+  font-size: var(--size-2xl);
 }
 
 .toggle {

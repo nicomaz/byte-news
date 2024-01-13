@@ -8,7 +8,7 @@ const Header = () => {
   return (
     <nav>
       <ul className="header-menu">
-        <li className="header-container">
+        <li className="header-container" tabIndex="0">
           <Link to="/">
             <h1>
               INTER<span className="header-accent">BYTE</span>
@@ -20,7 +20,7 @@ const Header = () => {
             user.username === "guest" ? "/sign-in" : `/users/${user.username}`
           }
         >
-          <li>
+          <li tabIndex="0">
             <img
               src={user.avater_url}
               alt={`${user.username} icon`}
