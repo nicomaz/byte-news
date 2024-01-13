@@ -16,7 +16,11 @@ export const getIndividualArticle = (articleId) => {
   });
 };
 
-export const getArticleByTopic = () => {};
+export const getArticleByTopic = (topicName) => {
+  return byteNews.get(`/articles?topic=${topicName}`).then((res) => {
+    return res.data.articles;
+  });
+};
 
 export const getTopics = () => {
   return byteNews.get(`/topics`).then((res) => {

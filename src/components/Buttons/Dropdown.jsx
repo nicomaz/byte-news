@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getTopics } from "../../utils/api";
+import { Link } from "react-router-dom";
 
 export default function Dropdown({ dropdownName, dropdownItems }) {
   const [topics, setTopics] = useState();
@@ -24,7 +25,11 @@ export default function Dropdown({ dropdownName, dropdownItems }) {
       {open ? (
         <ul className="menu">
           {topics.map((topic) => {
-            return <li key={topic.slug}>{topic.slug}</li>;
+            return (
+              <Link to={`/article/topics/${topic.slug}`}>
+                <li key={topic.slug}>{topic.slug}</li>
+              </Link>
+            );
           })}
         </ul>
       ) : null}

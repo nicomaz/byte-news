@@ -163,6 +163,15 @@ h2 {
   letter-spacing: -1px;
   font-weight: 700;
 }
+
+.topic-title {
+  padding: 5px;
+  padding-bottom: 0px;
+  font-size: var(--size-2xl);
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: -1px;
+  font-weight: 700;
+}
 /* `loading */
 .loading {
   font-family: "Montserrat", sans-serif;
@@ -537,7 +546,7 @@ form.login-form {
   z-index: 10;
 }
 
-.menu > li {
+.menu > a li {
   margin: 0;
   padding: 1px 9px;
   background-color: var(--clr-blue);
