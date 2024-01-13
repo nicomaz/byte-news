@@ -7,6 +7,7 @@ import Article from "./pages/Article";
 import Header from "./components/Header";
 import { LoadingProvider } from "./contexts/Loading";
 import SignIn from "./pages/SignIn";
+import ArticlesByTopic from "./pages/ArticlesByTopic";
 
 function App() {
   return (
@@ -22,6 +23,10 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/article/:articleId" element={<Article />} />
                 <Route path="/sign-in" element={<SignIn />} />
+                <Route
+                  path="/article/topics/:topicId"
+                  element={<ArticlesByTopic />}
+                />
               </Routes>
             </ArticlesProvider>
           </UserProvider>

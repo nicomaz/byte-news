@@ -4,8 +4,6 @@ const ErrorModal = (props) => {
   const [isOpen, setIsOpen] = useState(true);
   const { setError } = props;
 
-  console.log(props);
-
   return (
     <section>
       <div className={isOpen ? "display-block" : "display-none"}>
