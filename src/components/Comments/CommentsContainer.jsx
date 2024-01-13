@@ -11,7 +11,7 @@ const CommentsContainer = ({ articleId }) => {
     getCommentsByArticleId(articleId).then((commentData) => {
       setComments(commentData);
     });
-  });
+  }, []);
 
   if (!comments.length) {
     return <div className=" msg center">No comments to show</div>;

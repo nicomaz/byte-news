@@ -10,11 +10,8 @@ const SmallArticleCard = ({ article }) => {
         <img src={article_img_url} alt="" />
       </Link>
       <h3>
-        <span className="accent small-text"> {author} </span>
-        <span className="accent small-text">
-          <span className="accent-2 small-text">in </span>
-          {topic}
-        </span>
+        <span className="accent"> {author} </span>
+        <span className="accent">{topic}</span>
       </h3>
       <Link to={`/article/${article.article_id}`}>
         <h2 className="article-title">{title}</h2>
