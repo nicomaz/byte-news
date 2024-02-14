@@ -9,7 +9,7 @@
 
   ## How is it built?
 
-  The goal of this project was to create and deploy an API that allows application data to be accessed programmatically. It provides server-side rendering for my next project: the front-end of Interbyte News. 
+  A new website that allows users to comment & like / dislike articles, delete comments, like / dislike comments and view articles. Uses a REST API. 
 
   📝 **Written using React**
   
