@@ -190,6 +190,9 @@ a,
   font-family: "Montserrat", sans-serif;
   letter-spacing: -1px;
   font-weight: 700;
+  margin: 0 12px;
+  color: var(--clr-blue);
+  font-variant: small-caps;
 }
 
 .page-text {
@@ -250,6 +253,15 @@ a,
   list-style: none;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+}
+
+.top-nav-left {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  list-style: none;
+  gap: 20px;
 }
 
 .header-menu span {
@@ -441,6 +453,10 @@ button.one {
   }
 }
 
+li.container.comments {
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+}
+
 .form {
   text-align: center;
 }
@@ -563,6 +579,11 @@ form.login-form {
   overflow: hidden;
   background-color: #ffffff;
   border-radius: 5px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.accent button {
+  margin: 10px 10px;
 }
 
 .error-msg {
@@ -582,6 +603,12 @@ form.login-form {
 
 .display-block {
   display: block;
+  margin: 0 auto;
+}
+
+.loading {
+  width: 100vw;
+  text-align: center;
 }
 
 .articles > li {
@@ -857,39 +884,6 @@ ul.container {
     font-size: var(--size-xl);
   }
 
-  .main-img {
-    width: 50vw;
-    position: relative;
-  }
-
-  .main-container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    height: fit-content;
-    margin-bottom: 0rem;
-    padding: 0.8rem 1rem;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-  }
-
-  .main-article-card {
-    position: relative;
-    margin: 0rem 1rem;
-    padding: 0rem;
-    transform: translateY(0px);
-    background-color: var(--clr-lightest);
-    box-shadow: none;
-  }
-
-  h2.article-title {
-    word-spacing: -0.15rem;
-    text-align: right;
-    text-align-last: right;
-    font-size: var(--size-3xl);
-    padding-bottom: 1rem;
-    padding-left: 1rem;
-  }
-
   .comments {
     font-size: 1rem;
   }
@@ -1003,13 +997,21 @@ ul.container {
     margin: 0 auto;
   }
 
-  .articles-container {
-    display: flex;
-    flex-flow: row wrap;
+  img.main-img {
+    width: 100vw;
   }
 
-  .main-container {
-    flex: 1;
+  div.main-img {
+    width: 100vw;
+    margin: 0 auto;
+  }
+
+  .main-img {
+    margin: 0rem;
+  }
+
+  li.secondary-article-card {
+    min-width: 30vw;
   }
 
   .secondary-container {
@@ -1024,14 +1026,17 @@ ul.container {
     margin: 0rem;
   }
 
-  .article-title {
-    text-align: center;
-    font-size: var(--size-2xl);
+  .main-article-card .article-title {
+    font-size: var(--size-3xl);
     word-spacing: -0.15rem;
+    margin-bottom: 30px;
+    padding: 1rem 0rem;
   }
 
-  img.main-img {
-    max-width: 440px;
+  .main-article-card {
+    margin: -7rem 0rem;
+    height: 30vh;
+    margin-bottom: 50px;
   }
 
   .singleCard {
@@ -1045,6 +1050,28 @@ ul.container {
   .singleCard {
     font-size: 1.1rem;
   }
+
+  .tertiary-container {
+    display: flex;
+    flex-flow: wrap;
+    flex: auto;
+  }
+
+  .secondary-container {
+    gap: 10px;
+  }
+
+  li.secondary-article-card {
+    border-radius: 15px;
+  }
+
+  li.tertiary-article-card {
+    border-radius: 15px;
+  }
+
+  img {
+    border-radius: 15px;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -1053,8 +1080,203 @@ ul.container {
     width: 100%;
   }
 
+  .articles {
+    margin: 0 200px;
+  }
+
+  .articles-container {
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  .main-container {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    flex: 1;
+    background-color: var(--clr-lightest);
+    border-radius: 15px;
+    height: 40vh;
+    align-items: center;
+    height: fit-content;
+    margin-bottom: 0rem;
+    padding: 0.8rem 1rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  }
+
+  .main-article-card {
+    width: 20vw;
+  }
+
+  img.main-img {
+    max-height: 40vh;
+    width: 25vw;
+    border-radius: 15px;
+  }
+
+  div.main-img {
+    width: 25vw;
+    margin: 0rem;
+  }
+
+  body {
+    background-image: linear-gradient(
+      90deg,
+      var(--clr-darkblue),
+      var(--color-secondary)
+    );
+  }
+
+  .header-menu {
+    padding: 0 175px;
+  }
+
+  li.page-name {
+    padding: 0 40px;
+  }
+
+  .top-nav-left {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 0 115px;
+  }
+
+  .sort {
+    padding-right: 120px;
+  }
+
+  .sort-by {
+    padding: 0 180px;
+    padding-bottom: 15px;
+  }
+
   ul.container {
     padding: 1rem 5rem;
+  }
+
+  .main-img {
+    width: 50vw;
+    position: relative;
+    padding-left: 10px;
+  }
+
+  .main-article-card {
+    position: relative;
+    margin: 0rem 1rem;
+    padding: 0rem;
+    transform: translateY(0px);
+    background-color: var(--clr-lightest);
+    box-shadow: none;
+  }
+
+  h2.article-title {
+    word-spacing: -0.15rem;
+    text-align: right;
+    text-align-last: right;
+    font-size: var(--size-3xl);
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+  }
+
+  .main-article-card .article-title {
+    margin-bottom: 4rem;
+  }
+
+  .tertiary-container {
+    gap: 10px;
+  }
+
+  .secondary-container {
+    margin-bottom: 0px;
+  }
+
+  .topic-title {
+    color: var(--clr-lightblue);
+    width: fit-content;
+    margin: 0 200px;
+  }
+
+  .singleCard {
+    margin: 0 200px;
+    margin-top: 10px;
+    background-color: var(--clr-lightest);
+    border-radius: 15px;
+  }
+
+  .singleCard-top img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+
+  .singleCard-bottom {
+    margin-top: 10px;
+  }
+
+  .singleCard-top h2 {
+    font-size: var(--size-4xl);
+  }
+
+  .container-name {
+    color: var(--clr-lightest);
+  }
+
+  .container.msg {
+    background-color: var(--clr-lightest);
+    margin-bottom: 20px;
+    margin-top: 10px;
+  }
+
+  li.container.comments {
+    background-color: var(--clr-lightest);
+    margin-left: 90px;
+    margin-right: 90px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+  }
+
+  .comments-container .btns.toggle {
+    background-color: var(--clr-lightest);
+    padding: 5px 10px;
+    margin-bottom: 20px;
+  }
+
+  .container h2.title {
+    color: var(--clr-lightest);
+  }
+
+  .login-input {
+    border-bottom: 2px solid var(--clr-lightblue);
+    width: 30vw;
+  }
+
+  .label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.3s;
+    font-size: 1rem;
+    color: var(--clr-light);
+    width: 60vw;
+  }
+
+  .login-form .btns {
+    color: var(--clr-light);
+    padding: 5px 10px;
+  }
+
+  .login-input:focus {
+    color: var(--clr-light);
+  }
+
+  .modal-container {
+    width: 30vw;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  }
+
+  .accent button {
+    margin: 10px 10px;
   }
 }
 
