@@ -25,11 +25,5 @@
 
 ## Interbyte News in action 
 Check out the hosted version of [Interbyte News](https://interbyte.netlify.app/) and login as JessJelly
-Currently looks best on mobile! 
-
-## Working on 
-- Styling on larger screens
-- Adding accessibility features
-- Adding log-in, sign-in functionality
   
   
